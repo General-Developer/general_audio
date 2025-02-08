@@ -1,0 +1,6 @@
+framework module general_audio {
+  umbrella header "general_audio.h"
+
+  export *
+  module * { export * }
+}
