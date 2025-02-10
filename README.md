@@ -1,6 +1,6 @@
-# Whisper Library
+# General Audio
  
-**Whisper Library** Is library for transcribe sound to wav
+**General Audio** Is library for help you record audio in cross platform
 
 [![](https://raw.githubusercontent.com/General-Developer/whisper_library/refs/heads/main/assets/demo_background.png)](https://youtu.be/drlqUwJEOg4)
 
@@ -42,13 +42,13 @@
 1. **Dart**
 
 ```bash
-dart pub add whisper_library_dart
+dart pub add general_audio
 ```
 
 2. **Flutter**
 
 ```bash
-flutter pub add whisper_library_flutter
+flutter pub add general_audio_flutter
 ```
 
 ## 🚀️ Quick Start
@@ -56,43 +56,28 @@ flutter pub add whisper_library_flutter
 Example Quickstart script minimal for insight you or make you use this library because very simple
 
 ```dart
-
-import 'dart:io';
-import 'package:general_lib/general_lib.dart';
-import 'package:whisper_library_dart/whisper_library_dart.dart';
-
+import 'package:general_audio/general_audio.dart';
+import 'package:io_universe/io_universe.dart';
 void main(List<String> args) async {
-  print("start");
+  print("Start");
+  GeneralAudio generalAudio = GeneralAudio(
+    sharedLibraryPath: "../general_audio_flutter/linux/libgeneral_audio.so",
+  );
+  await generalAudio.ensureInitialized();
+  final GeneralAudioRecorder generalAudioRecorder = generalAudio.createRecordOrGetRecord(
+    outputRecordFilePath: "new_record.wav",
+  );
+  await generalAudioRecorder.start();
+  print(generalAudioRecorder.isRecord);
 
-  /// make sure you have downloaded model
-  final String whisperModelPath =
-      "../../../../../big-data/ai/whisper-ggml/ggml-small.bin";
-  final WhisperLibrary whisperLibrary = WhisperLibrary(
-    libraryWhisperPath: "../whisper_library_flutter/linux/libwhisper.so",
-  );
-  await whisperLibrary.ensureInitialized();
-  final isLoadedModel = whisperLibrary.loadWhisperModel(
-    whisperModelPath: whisperModelPath,
-  );
-  if (isLoadedModel == false) {
-    print("cant loaded");
-    exit(1);
-  }
-  final File fileWav = File(
-    "../../native_lib/lib/whisper.cpp/samples/jfk.wav",
-  );
-  await Future.delayed(Duration(seconds: 2));
-  DateTime dateTime = DateTime.now();
-  final result = await whisperLibrary.transcribeToJson(
-    fileWav: fileWav,
-    useCountProccecors: 1,
-    useCountThread: (Platform.numberOfProcessors / 2).toInt(),
-  );
-  print("seconds: ${DateTime.now().difference(dateTime)}");
-  result.printPretty();
-  exit(0);
+  stdin.listen((e) async {
+    if (generalAudioRecorder.isRecord) {
+      await generalAudioRecorder.stop();
+    }
+    print(generalAudioRecorder.isRecord);
+    exit(0);
+  });
 }
-
 ```
  
 # A Fact
