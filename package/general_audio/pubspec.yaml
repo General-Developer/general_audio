@@ -1,6 +1,6 @@
 name: 'general_audio'
 description: 'general_audio is program for help you, booster up your projects significants'
-version: '0.0.1'
+version: '0.0.2'
 homepage: 'https://github.com/General-Developer/general_audio'
 repository: 'https://github.com/General-Developer/general_audio'
 issue_tracker: 'https://github.com/General-Developer/general_audio/issues'
@@ -24,7 +24,7 @@ dependencies:
   build_runner: '^2.4.14'
   meta: '^1.15.0'
   io_universe: '^0.0.5'
-  general_lib: '^0.0.63'
+  general_lib: '^0.0.64'
 dev_dependencies:
   lints: '^5.0.0'
   test: 'any'

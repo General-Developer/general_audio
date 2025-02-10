@@ -1,6 +1,6 @@
 name: 'general_audio_dart'
 description: 'general_audio is program for help you, booster up your projects significants'
-version: '0.0.1'
+version: '0.0.2'
 homepage: 'https://github.com/General-Developer/general_audio'
 repository: 'https://github.com/General-Developer/general_audio'
 issue_tracker: 'https://github.com/General-Developer/general_audio/issues'
@@ -21,7 +21,7 @@ environment:
   sdk: '>=3.6.0 <4.0.0'
 dependencies:
   path: '^1.9.0'
-  general_audio: '^0.0.1'
+  general_audio: '^0.0.2'
   collection: '^1.19.0'
   yaml: '^3.1.3'
 dev_dependencies:
