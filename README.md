@@ -1,16 +1,19 @@
-# Package Full Template
+# Whisper Library
  
-**Package Full Template** this open source project is free 
+**Whisper Library** Is library for transcribe sound to wav
 
-## Demo
- 
+[![](https://raw.githubusercontent.com/General-Developer/whisper_library/refs/heads/main/assets/demo_background.png)](https://youtu.be/drlqUwJEOg4)
+
+[![](https://raw.githubusercontent.com/globalcorporation/.github/main/.github/logo/powered.png)](https://www.youtube.com/@Global_Corporation)
+
+**Copyright (c) 2024 GLOBAL CORPORATION - GENERAL DEVELOPER**
 
 ## 📚️ Docs
 
-1. [Documentation]({url_documentation})
-2. [Youtube](https://youtube.com/{main_youtube_username_owner})
-3. [Telegram Support Group](https://t.me/{telegram_support_username})
-4. [Contact Developer](https://github.com/{main_username_owner}) (check social media or readme profile github)
+1. [Documentation](https://youtube.com/@GENERAL_DEV)
+2. [Youtube](https://youtube.com/@GENERAL_DEV)
+3. [Telegram Support Group](https://t.me/DEVELOPER_GLOBAL_PUBLIC)
+4. [Contact Developer](https://github.com/General-Developer) (check social media or readme profile github)
 
 ## 🔖️ Features
 
@@ -18,8 +21,8 @@
 2. [x] 📜️ **Standarization** Style Code
 3. [x] ⌨️ **Cli** (Terminal for help you use this library or create project)
 4. [x] 🔥️ **Api** (If you developer bot / userbot you can use this library without interact cli just add library and use 🚀️)
-5. [ ] 🧩️ **Customizable Extension** (if you want add extension so you can more speed up on development)
-6. [ ] ✨️ **Pretty Information** (user friendly for newbie)
+5. [x] 🧩️ **Customizable Extension** (if you want add extension so you can more speed up on development)
+6. [x] ✨️ **Pretty Information** (user friendly for newbie)
  
 ## ❔️ Fun Fact
 
@@ -27,60 +30,75 @@
  
 ## 📈️ Proggres
  
-- **2024-04-20**
+- **10-02-2025**
   Starting **Release Stable** With core Features
-- **2024-04-19**
-  Starting create simple library **Package Full Template**
-- **2024-04-18**
-  Think to standarization server so i can create project easy, and not only project i can add feature to my ai so my ai can create server and test direct without use rest-api, talk, searching internet or use any api 
+
+## Resources
+
+1. [MODEL](https://huggingface.co/ggerganov/whisper.cpp/tree/main)
 
 ### 📥️ Install Library
 
 1. **Dart**
 
 ```bash
-dart pub add general_audio
+dart pub add whisper_library_dart
 ```
 
 2. **Flutter**
 
 ```bash
-flutter pub add general_audio_flutter
+flutter pub add whisper_library_flutter
 ```
-
-### 💻️ Install Cli
-
-- from pub
-
-```bash
-
-```
-
-- from github
 
 ## 🚀️ Quick Start
 
-Example Quickstart script minimal for insight you or make you use this library because very simple 
-
-### Api
-
-### Cli
-
-### Edge
-
-if you want deploy server rest api on Severless functions Like (Supabase, Cloud Flare, Deno Deploy, Vercel, Netlify)
+Example Quickstart script minimal for insight you or make you use this library because very simple
 
 ```dart
 
+import 'dart:io';
+import 'package:general_lib/general_lib.dart';
+import 'package:whisper_library_dart/whisper_library_dart.dart';
+
+void main(List<String> args) async {
+  print("start");
+
+  /// make sure you have downloaded model
+  final String whisperModelPath =
+      "../../../../../big-data/ai/whisper-ggml/ggml-small.bin";
+  final WhisperLibrary whisperLibrary = WhisperLibrary(
+    libraryWhisperPath: "../whisper_library_flutter/linux/libwhisper.so",
+  );
+  await whisperLibrary.ensureInitialized();
+  final isLoadedModel = whisperLibrary.loadWhisperModel(
+    whisperModelPath: whisperModelPath,
+  );
+  if (isLoadedModel == false) {
+    print("cant loaded");
+    exit(1);
+  }
+  final File fileWav = File(
+    "../../native_lib/lib/whisper.cpp/samples/jfk.wav",
+  );
+  await Future.delayed(Duration(seconds: 2));
+  DateTime dateTime = DateTime.now();
+  final result = await whisperLibrary.transcribeToJson(
+    fileWav: fileWav,
+    useCountProccecors: 1,
+    useCountThread: (Platform.numberOfProcessors / 2).toInt(),
+  );
+  print("seconds: ${DateTime.now().difference(dateTime)}");
+  result.printPretty();
+  exit(0);
+}
+
 ```
+ 
+# A Fact
 
+This library is originally from [SKKbySSK - coast_audio](https://github.com/SKKbySSK/coast_audio) but because the code style is not easy to read so I tried to simplify it and try to support cross platform compile.
 
-### Native
+I did not try pull request because it is not possible to set someone
 
-if you want deploy on device or server or vps, or flutter app try this script
-
-```dart 
-```
-# general_audio
-# general_audio
-# general_audio
+**Copyright (c) 2024 GLOBAL CORPORATION - GENERAL DEVELOPER**
