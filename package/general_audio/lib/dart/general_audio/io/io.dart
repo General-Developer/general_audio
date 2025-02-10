@@ -74,7 +74,9 @@ class GeneralAudio extends GeneralAudioBase {
   @override
   GeneralAudioRecorder createRecordOrGetRecord({
     required String outputRecordFilePath,
+    int? sampleRate,
     String? uniqueId,
+    int? channels,
   }) {
     final String audioUniqueId = uniqueId ?? generateUuid(10);
     final GeneralAudioRecorder? generalAudioRecorder = recorderStates[audioUniqueId];
@@ -82,6 +84,7 @@ class GeneralAudio extends GeneralAudioBase {
       audioDeviceBackend: audioDeviceContext.activeBackend,
       audioDeviceId: audioDeviceContext.getDevices(AudioDeviceType.capture).where((d) => d.isDefault).firstOrNull?.id,
       saveToFilePath: outputRecordFilePath,
+      sampleRate: sampleRate,
     );
     if (generalAudioRecorder is GeneralAudioRecorder) {
       generalAudioRecorder.generalAudioRecorderMessage = generalAudioRecorderMessage;

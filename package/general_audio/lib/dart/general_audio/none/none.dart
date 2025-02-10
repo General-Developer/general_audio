@@ -30,6 +30,9 @@ class GeneralAudio extends GeneralAudioBase {
   GeneralAudioRecorder createRecordOrGetRecord({
     required String outputRecordFilePath,
     String? uniqueId,
+    int? sampleRate,
+        int? channels,
+
   }) {
     final String audioUniqueId = uniqueId ?? generateUuid(10);
     final GeneralAudioRecorder? generalAudioRecorder = recorderStates[audioUniqueId];

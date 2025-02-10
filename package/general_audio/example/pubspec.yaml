@@ -30,7 +30,7 @@ dependencies:
   googleapis_client: '^0.0.26'
   simulate: '^0.0.52'
   translate_client: '^0.0.11'
-  general_framework: '^0.0.20'
+  general_framework: '^0.0.21'
   general_payment: '^0.0.7'
   telegraph: '^0.0.6'
   markdown_flutter: '^0.0.12'

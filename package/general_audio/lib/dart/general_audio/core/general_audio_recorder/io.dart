@@ -4,6 +4,7 @@ import 'package:general_audio/core/experimental.dart';
 import 'package:general_audio/core/general_audio.dart';
 import 'package:general_audio/dart/general_audio/core/general_audio_recorder/base.dart';
 import 'package:io_universe/io_universe.dart';
+import "dart:math" as math;
 
 class GeneralAudioRecorder extends GeneralAudioRecorderBase {
   GeneralAudioRecorder({
@@ -45,9 +46,9 @@ class GeneralAudioRecorder extends GeneralAudioRecorderBase {
     AudioResourceManager.isDisposeLogEnabled = true;
 
     // Prepare the audio format and buffer, audio device and encoder.
-    const format = AudioFormat(
-      sampleRate: 48000,
-      channels: 2,
+    final format = AudioFormat(
+      sampleRate: math.max(message.sampleRate ?? 48000, 16000),
+      channels: math.max(message.channels ?? 2, 1),
       sampleFormat: SampleFormat.int16,
     );
 

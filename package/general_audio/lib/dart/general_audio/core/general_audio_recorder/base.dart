@@ -4,10 +4,14 @@ class GeneralAudioRecorderMessage {
   dynamic audioDeviceBackend;
   dynamic audioDeviceId;
   String saveToFilePath;
+  int? sampleRate;
+  int? channels;
   GeneralAudioRecorderMessage({
     required this.audioDeviceBackend,
     required this.audioDeviceId,
     required this.saveToFilePath,
+    this.sampleRate,
+    this.channels,
   });
 }
 

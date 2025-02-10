@@ -12,6 +12,9 @@ abstract class GeneralAudioBaseCore {
   GeneralAudioRecorder createRecordOrGetRecord({
     required String outputRecordFilePath,
     String? uniqueId,
+    int? sampleRate,
+    int? channels,
+
   });
 }
 
