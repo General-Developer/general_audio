@@ -22,7 +22,10 @@ class MaDecoder {
     _pConfig.ref.ditherMode = ditherMode.maValue;
 
     final pUserData = _MaDecoderCallback.register(this);
-    _interop.bindings.ma_decoder_init(_MaDecoderCallback.onRead, _MaDecoderCallback.onSeek, pUserData, _pConfig, _pDecoder).throwMaResultIfNeeded();
+    _interop.bindings
+        .ma_decoder_init(_MaDecoderCallback.onRead, _MaDecoderCallback.onSeek,
+            pUserData, _pConfig, _pDecoder)
+        .throwMaResultIfNeeded();
 
     originalFormat = AudioFormat(
       sampleFormat: _pDecoder.ref.converter.formatIn.asSampleFormat(),
@@ -43,26 +46,37 @@ class MaDecoder {
 
   final _interop = CoastAudioInterop();
 
-  late final _pConfig = _interop.allocateManaged<ma_decoder_config>(sizeOf<ma_decoder_config>());
-  late final _pDecoder = _interop.allocateManaged<ma_decoder>(sizeOf<ma_decoder>());
-  late final _pFrames = _interop.allocateManaged<UnsignedLongLong>(sizeOf<UnsignedLongLong>());
+  late final _pConfig =
+      _interop.allocateManaged<ma_decoder_config>(sizeOf<ma_decoder_config>());
+  late final _pDecoder =
+      _interop.allocateManaged<ma_decoder>(sizeOf<ma_decoder>());
+  late final _pFrames =
+      _interop.allocateManaged<UnsignedLongLong>(sizeOf<UnsignedLongLong>());
 
   int get cursorInFrames {
-    _interop.bindings.ma_decoder_get_cursor_in_pcm_frames(_pDecoder, _pFrames).throwMaResultIfNeeded();
+    _interop.bindings
+        .ma_decoder_get_cursor_in_pcm_frames(_pDecoder, _pFrames)
+        .throwMaResultIfNeeded();
     return _pFrames.value;
   }
 
   set cursorInFrames(int value) {
-    _interop.bindings.ma_decoder_seek_to_pcm_frame(_pDecoder, value).throwMaResultIfNeeded();
+    _interop.bindings
+        .ma_decoder_seek_to_pcm_frame(_pDecoder, value)
+        .throwMaResultIfNeeded();
   }
 
   int get lengthInFrames {
-    _interop.bindings.ma_decoder_get_length_in_pcm_frames(_pDecoder, _pFrames).throwMaResultIfNeeded();
+    _interop.bindings
+        .ma_decoder_get_length_in_pcm_frames(_pDecoder, _pFrames)
+        .throwMaResultIfNeeded();
     return _pFrames.value;
   }
 
   int get availableFrames {
-    _interop.bindings.ma_decoder_get_available_frames(_pDecoder, _pFrames).throwMaResultIfNeeded();
+    _interop.bindings
+        .ma_decoder_get_available_frames(_pDecoder, _pFrames)
+        .throwMaResultIfNeeded();
     return _pFrames.value;
   }
 
@@ -71,7 +85,10 @@ class MaDecoder {
   late final AudioFormat outputFormat;
 
   AudioDecodeResult decode(AudioBuffer destination) {
-    final result = _interop.bindings.ma_decoder_read_pcm_frames(_pDecoder, destination.pBuffer.cast(), destination.sizeInFrames, _pFrames).asMaResult();
+    final result = _interop.bindings
+        .ma_decoder_read_pcm_frames(_pDecoder, destination.pBuffer.cast(),
+            destination.sizeInFrames, _pFrames)
+        .asMaResult();
     if (result != MaResult.success && result != MaResult.atEnd) {
       throw MaException(result);
     }
@@ -88,8 +105,10 @@ class MaDecoder {
     _interop.dispose();
   }
 
-  MaResult _onRead(Pointer<Void> pBufferOut, int bytesToRead, Pointer<Size> pBytesRead) {
-    pBytesRead.value = dataSource.readBytes(pBufferOut.cast<Uint8>().asTypedList(bytesToRead));
+  MaResult _onRead(
+      Pointer<Void> pBufferOut, int bytesToRead, Pointer<Size> pBytesRead) {
+    pBytesRead.value =
+        dataSource.readBytes(pBufferOut.cast<Uint8>().asTypedList(bytesToRead));
     return MaResult.success;
   }
 
@@ -117,8 +136,10 @@ class MaDecoder {
 }
 
 class _MaDecoderCallback {
-  static final onRead = Pointer.fromFunction<ma_decoder_read_procFunction>(_onRead, ma_result.MA_ERROR);
-  static final onSeek = Pointer.fromFunction<ma_decoder_seek_procFunction>(_onSeek, ma_result.MA_ERROR);
+  static final onRead = Pointer.fromFunction<ma_decoder_read_procFunction>(
+      _onRead, ma_result.MA_ERROR);
+  static final onSeek = Pointer.fromFunction<ma_decoder_seek_procFunction>(
+      _onSeek, ma_result.MA_ERROR);
 
   static final _instances = <Pointer<Void>, MaDecoder>{};
 
@@ -133,7 +154,8 @@ class _MaDecoderCallback {
     instance!._interop.memory.allocator.free(pUserData);
   }
 
-  static int _onRead(Pointer<ma_decoder> pDecoder, Pointer<Void> pBufferOut, int bytesToRead, Pointer<Size> pBytesRead) {
+  static int _onRead(Pointer<ma_decoder> pDecoder, Pointer<Void> pBufferOut,
+      int bytesToRead, Pointer<Size> pBytesRead) {
     final instance = _instances[pDecoder.ref.pUserData];
     if (instance == null) {
       return MaResult.unavailable.code;

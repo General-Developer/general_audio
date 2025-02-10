@@ -26,7 +26,8 @@ class _AudioResourceHolder {
   void dispose() {
     finalizer();
     if (AudioResourceManager.isDisposeLogEnabled) {
-      print('[general_audio/AudioResource] Disposed `${resource.name}` (id: ${resource.id})');
+      print(
+          '[general_audio/AudioResource] Disposed `${resource.name}` (id: ${resource.id})');
     }
   }
 }
@@ -74,7 +75,8 @@ mixin AudioResourceMixin implements Finalizable {
   var _hasFinalizer = false;
 
   /// Whether this resource is already disposed.
-  bool get isDisposed => _hasFinalizer && !_resourceHolders.containsKey(resourceId);
+  bool get isDisposed =>
+      _hasFinalizer && !_resourceHolders.containsKey(resourceId);
 
   /// The unique identifier of this resource.
   late final resourceId = identityHashCode(this);

@@ -3,7 +3,8 @@ import 'dart:math';
 import 'package:general_audio/core/general_audio.dart';
 
 /// [ConverterNode] is a node that converts the audio data to the specified format.
-class ConverterNode extends AudioNode with SingleInNodeMixin, SingleOutNodeMixin {
+class ConverterNode extends AudioNode
+    with SingleInNodeMixin, SingleOutNodeMixin {
   ConverterNode({
     required this.outputFormat,
     this.bufferFrameCount = 1024,
@@ -43,7 +44,8 @@ class ConverterNode extends AudioNode with SingleInNodeMixin, SingleOutNodeMixin
   );
 
   @override
-  late final outputBus = AudioOutputBus(node: this, formatResolver: (_) => outputFormat);
+  late final outputBus =
+      AudioOutputBus(node: this, formatResolver: (_) => outputFormat);
 
   @override
   AudioReadResult read(AudioOutputBus outputBus, AudioBuffer buffer) {
@@ -64,25 +66,30 @@ class _Converter {
           inputFormat: inputFormat,
           outputFormat: outputFormat,
         ),
-        _frames = AllocatedAudioFrames(format: inputFormat, length: bufferFrameCount);
+        _frames =
+            AllocatedAudioFrames(format: inputFormat, length: bufferFrameCount);
 
   final AudioFormatConverter _converter;
   final AllocatedAudioFrames _frames;
 
   late final _inputBuffer = _frames.lock();
 
-  bool isCompatible(AudioFormat inputFormat) => _converter.inputFormat.isSameFormat(inputFormat);
+  bool isCompatible(AudioFormat inputFormat) =>
+      _converter.inputFormat.isSameFormat(inputFormat);
 
   AudioReadResult convert(AudioInputBus inputBus, AudioBuffer outputBuffer) {
     var framesRead = 0;
     var isEnd = false;
     while (framesRead < outputBuffer.sizeInFrames) {
       final readResult = inputBus.connectedBus!.read(
-        _inputBuffer.limit(min(outputBuffer.sizeInFrames - framesRead, _inputBuffer.sizeInFrames)),
+        _inputBuffer.limit(min(
+            outputBuffer.sizeInFrames - framesRead, _inputBuffer.sizeInFrames)),
       );
 
       framesRead += readResult.frameCount;
-      _converter.convert(input: _inputBuffer.limit(readResult.frameCount), output: outputBuffer.offset(framesRead));
+      _converter.convert(
+          input: _inputBuffer.limit(readResult.frameCount),
+          output: outputBuffer.offset(framesRead));
 
       if (readResult.isEnd) {
         isEnd = true;

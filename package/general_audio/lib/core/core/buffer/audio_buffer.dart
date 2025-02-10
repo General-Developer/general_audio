@@ -40,7 +40,8 @@ class AudioBuffer {
     assert(frames <= sizeInFrames);
     return AudioBuffer(
       root: root,
-      pBuffer: Pointer.fromAddress(pBuffer.address + (format.bytesPerFrame * frames)),
+      pBuffer: Pointer.fromAddress(
+          pBuffer.address + (format.bytesPerFrame * frames)),
       sizeInBytes: sizeInBytes - (frames * format.bytesPerFrame),
       sizeInFrames: sizeInFrames - frames,
       format: format,

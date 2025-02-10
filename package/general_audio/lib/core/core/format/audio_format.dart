@@ -23,7 +23,9 @@ class AudioFormat {
 
   /// Verifies that the format is same as [other].
   bool isSameFormat(AudioFormat other) {
-    return sampleRate == other.sampleRate && channels == other.channels && sampleFormat == other.sampleFormat;
+    return sampleRate == other.sampleRate &&
+        channels == other.channels &&
+        sampleFormat == other.sampleFormat;
   }
 
   /// Creates a copy of the format with the specified parameters.
@@ -46,7 +48,8 @@ class AudioFormat {
 }
 
 class AudioFormatError extends Error {
-  AudioFormatError.unsupportedSampleFormat(SampleFormat format) : message = '${format.name} is not supported.';
+  AudioFormatError.unsupportedSampleFormat(SampleFormat format)
+      : message = '${format.name} is not supported.';
   final String message;
 
   @override

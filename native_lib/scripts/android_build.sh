@@ -1,16 +1,16 @@
-#!/bin/sh
+#!/bin/bash
 
-# export ABIS="armeabi-v7a arm64-v8a x86 x86_64"
-export ABIS="arm64-v8a"
+export ANDROID_NDK=$HOME/Android/Sdk/ndk/27.2.12479018
+ANDROID_ABIS="arm64-v8a armeabi-v7a x86 x86_64"
 
-for ABI in ABIS; do
+for ANDROID_ABI in $ANDROID_ABIS; do
   mkdir -p build/android
   cd build/android
 
   cmake ../.. \
     -DCMAKE_TOOLCHAIN_FILE="$ANDROID_NDK/build/cmake/android.toolchain.cmake" \
-    -DANDROID_ABI="$ABI" \
-    -DANDROID_PLATFORM=26 \
+    -DANDROID_ABI="$ANDROID_ABI" \
+    -DANDROID_PLATFORM=23 \
     -DCMAKE_INSTALL_PREFIX="../../build/android/$ABI" \
     -DOS=ANDROID \
     -DSHARED=YES
@@ -19,8 +19,8 @@ for ABI in ABIS; do
   cmake --install . --config Release
   cd ../..
 
-  mkdir -p prebuilt/android/$ABI
-  cp "build/android/libgeneral_audio.so" prebuilt/android/$ABI/libgeneral_audio.so
+  mkdir -p prebuilt/android/$ANDROID_ABI
+  cp "build/android/libgeneral_audio.so" prebuilt/android/$ANDROID_ABI/libgeneral_audio.so
 
   rm -rf build/android
 done

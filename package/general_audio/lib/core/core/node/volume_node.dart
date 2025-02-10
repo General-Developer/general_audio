@@ -11,7 +11,8 @@ class VolumeNode extends AudioFilterNode {
   late final inputBus = AudioInputBus.autoFormat(node: this);
 
   @override
-  late final outputBus = AudioOutputBus(node: this, formatResolver: (_) => inputBus.resolveFormat());
+  late final outputBus = AudioOutputBus(
+      node: this, formatResolver: (_) => inputBus.resolveFormat());
 
   @override
   AudioReadResult process(AudioBuffer buffer, bool isEnd) {
@@ -25,7 +26,8 @@ class VolumeNode extends AudioFilterNode {
       case SampleFormat.int32:
         buffer.applyInt32Volume(volume);
       case SampleFormat.int24:
-        throw AudioFormatError.unsupportedSampleFormat(buffer.format.sampleFormat);
+        throw AudioFormatError.unsupportedSampleFormat(
+            buffer.format.sampleFormat);
     }
 
     return AudioReadResult(frameCount: buffer.sizeInFrames, isEnd: isEnd);

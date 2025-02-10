@@ -7,7 +7,12 @@ extension AudioSampleRateConverterExtension on AudioSampleRateConverterConfig {
     final self = this;
     switch (self) {
       case LinearAudioSampleRateConverterConfig():
-        final config = bindings.ma_resampler_config_init(ma_format.ma_format_unknown, 0, 0, 0, ma_resample_algorithm.ma_resample_algorithm_linear);
+        final config = bindings.ma_resampler_config_init(
+            ma_format.ma_format_unknown,
+            0,
+            0,
+            0,
+            ma_resample_algorithm.ma_resample_algorithm_linear);
         config.linear.lpfOrder = self.lpfOrder;
         return config;
       default:

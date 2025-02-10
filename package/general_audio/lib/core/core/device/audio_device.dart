@@ -24,7 +24,8 @@ class AudioDeviceContext with AudioResourceMixin {
   AudioDeviceBackend get activeBackend => _context.activeBackend;
 
   /// Get the available devices for the specified device type.
-  List<AudioDeviceInfo> getDevices(AudioDeviceType type) => _context.getDevices(type);
+  List<AudioDeviceInfo> getDevices(AudioDeviceType type) =>
+      _context.getDevices(type);
 
   /// Create a playback device.
   ///
@@ -34,7 +35,8 @@ class AudioDeviceContext with AudioResourceMixin {
     required int bufferFrameSize,
     AudioDeviceId? deviceId,
     bool noFixedSizedProcess = true,
-    AudioDevicePerformanceProfile performanceProfile = AudioDevicePerformanceProfile.lowLatency,
+    AudioDevicePerformanceProfile performanceProfile =
+        AudioDevicePerformanceProfile.lowLatency,
     AudioFormatConverterConfig converter = const AudioFormatConverterConfig(),
   }) {
     return PlaybackDevice._initWithContext(
@@ -59,7 +61,8 @@ class AudioDeviceContext with AudioResourceMixin {
     required int bufferFrameSize,
     AudioDeviceId? deviceId,
     bool noFixedSizedProcess = true,
-    AudioDevicePerformanceProfile performanceProfile = AudioDevicePerformanceProfile.lowLatency,
+    AudioDevicePerformanceProfile performanceProfile =
+        AudioDevicePerformanceProfile.lowLatency,
     AudioFormatConverterConfig converter = const AudioFormatConverterConfig(),
   }) {
     return CaptureDevice._initWithContext(
@@ -143,7 +146,8 @@ abstract class AudioDevice with AudioResourceMixin {
 
   /// Stop the audio device.
   /// When [clearBuffer] is set to true, internal buffer will be cleared automatically (true by default).
-  void stop({bool clearBuffer = true}) => _native.stop(clearBuffer: clearBuffer);
+  void stop({bool clearBuffer = true}) =>
+      _native.stop(clearBuffer: clearBuffer);
 
   /// Clear the internal buffer.
   void clearBuffer() => _native.clearBuffer();

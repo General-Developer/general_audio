@@ -32,7 +32,8 @@ class GeneralAudioRecorder extends GeneralAudioRecorderBase {
   }
 
   // The worker function that runs in the isolate.
-  static Future<void> _worker(dynamic initialMessage, AudioIsolateWorkerMessenger messenger) async {
+  static Future<void> _worker(
+      dynamic initialMessage, AudioIsolateWorkerMessenger messenger) async {
     if (initialMessage is GeneralAudioRecorderMessage == false) {
       messenger.close();
     }
@@ -63,9 +64,11 @@ class GeneralAudioRecorder extends GeneralAudioRecorderBase {
       file: saveToFile,
       mode: FileMode.write,
     );
-    final encoder = WavAudioEncoder(dataSource: dataSource, inputFormat: format);
+    final encoder =
+        WavAudioEncoder(dataSource: dataSource, inputFormat: format);
     final clock = AudioIntervalClock(const AudioTime(0.2));
-    final bufferFrames = AllocatedAudioFrames(length: device.bufferFrameSize, format: format);
+    final bufferFrames =
+        AllocatedAudioFrames(length: device.bufferFrameSize, format: format);
 
     // Start the audio device, clock and encoder.
     encoder.start();

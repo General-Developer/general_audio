@@ -12,12 +12,12 @@ class GeneralAudioRecorder extends GeneralAudioRecorderBase {
   bool get isRecord => false;
 
   @override
-  Future<void> start() async{
+  Future<void> start() async {
     return;
   }
 
   @override
-  Future<void> stop() async{
+  Future<void> stop() async {
     return;
   }
 }

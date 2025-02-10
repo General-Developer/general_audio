@@ -49,7 +49,8 @@ class GeneralAudio extends GeneralAudioBase {
         };
       }
       audioDeviceContext = AudioDeviceContext(
-        backends: backends.entries.where((e) => e.value).map((e) => e.key).toList(),
+        backends:
+            backends.entries.where((e) => e.value).map((e) => e.key).toList(),
       );
     } catch (e) {}
     _isDeviceSupport = true;
@@ -79,15 +80,22 @@ class GeneralAudio extends GeneralAudioBase {
     int? channels,
   }) {
     final String audioUniqueId = uniqueId ?? generateUuid(10);
-    final GeneralAudioRecorder? generalAudioRecorder = recorderStates[audioUniqueId];
-    final GeneralAudioRecorderMessage generalAudioRecorderMessage = GeneralAudioRecorderMessage(
+    final GeneralAudioRecorder? generalAudioRecorder =
+        recorderStates[audioUniqueId];
+    final GeneralAudioRecorderMessage generalAudioRecorderMessage =
+        GeneralAudioRecorderMessage(
       audioDeviceBackend: audioDeviceContext.activeBackend,
-      audioDeviceId: audioDeviceContext.getDevices(AudioDeviceType.capture).where((d) => d.isDefault).firstOrNull?.id,
+      audioDeviceId: audioDeviceContext
+          .getDevices(AudioDeviceType.capture)
+          .where((d) => d.isDefault)
+          .firstOrNull
+          ?.id,
       saveToFilePath: outputRecordFilePath,
       sampleRate: sampleRate,
     );
     if (generalAudioRecorder is GeneralAudioRecorder) {
-      generalAudioRecorder.generalAudioRecorderMessage = generalAudioRecorderMessage;
+      generalAudioRecorder.generalAudioRecorderMessage =
+          generalAudioRecorderMessage;
       generalAudioRecorder.onStop = () {
         recorderStates.remove(audioUniqueId);
       };

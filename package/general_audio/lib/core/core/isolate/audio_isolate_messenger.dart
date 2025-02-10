@@ -11,7 +11,10 @@ class AudioIsolateHostMessenger {
 
   SendPort get workerToHostSendPort => _receivePort.sendPort;
 
-  late final message = _receivePort.where((r) => r is AudioIsolateWorkerMessage).cast<AudioIsolateWorkerMessage>().asBroadcastStream();
+  late final message = _receivePort
+      .where((r) => r is AudioIsolateWorkerMessage)
+      .cast<AudioIsolateWorkerMessage>()
+      .asBroadcastStream();
 
   void attach(SendPort sendPort) {
     _sendPort = sendPort;
@@ -28,7 +31,8 @@ class AudioIsolateHostMessenger {
     }
 
     final request = AudioIsolateHostRequest(payload);
-    final responseFuture = message.firstWhere((r) => r is AudioIsolateWorkerResponse && r.requestId == request.id);
+    final responseFuture = message.firstWhere(
+        (r) => r is AudioIsolateWorkerResponse && r.requestId == request.id);
     sendPort.send(request);
 
     final AudioIsolateWorkerResponse response;
@@ -43,7 +47,8 @@ class AudioIsolateHostMessenger {
         if (response.payload is TResponse) {
           return response.payload as TResponse;
         } else {
-          throw StateError('Unexpected response type: ${response.payload.runtimeType}');
+          throw StateError(
+              'Unexpected response type: ${response.payload.runtimeType}');
         }
       case AudioIsolateWorkerFailedResponse():
         return Future.error(response.exception, response.stackTrace);
@@ -76,9 +81,15 @@ class AudioIsolateWorkerMessenger {
 
   SendPort get hostToWorkerSendPort => _receivePort.sendPort;
 
-  late final message = _receivePort.where((r) => r is AudioIsolateHostMessage).cast<AudioIsolateHostMessage>().asBroadcastStream();
+  late final message = _receivePort
+      .where((r) => r is AudioIsolateHostMessage)
+      .cast<AudioIsolateHostMessage>()
+      .asBroadcastStream();
 
-  late final _requestStream = message.where((r) => r is AudioIsolateHostRequest).cast<AudioIsolateHostRequest>().asBroadcastStream();
+  late final _requestStream = message
+      .where((r) => r is AudioIsolateHostRequest)
+      .cast<AudioIsolateHostRequest>()
+      .asBroadcastStream();
 
   void attach(SendPort sendPort) {
     _sendPort = sendPort;
@@ -96,7 +107,8 @@ class AudioIsolateWorkerMessenger {
     _shutdownCompleter.complete(AudioIsolateShutdownReason.workerFinished);
   }
 
-  void listenRequest<TRequestPayload>(FutureOr<dynamic> Function(TRequestPayload) onRequest) {
+  void listenRequest<TRequestPayload>(
+      FutureOr<dynamic> Function(TRequestPayload) onRequest) {
     final sendPort = _sendPort;
     if (sendPort == null) {
       throw StateError('Messenger is not attached to an host');
@@ -117,7 +129,10 @@ class AudioIsolateWorkerMessenger {
     });
   }
 
-  Future<void> listenShutdown({FutureOr<void> Function(AudioIsolateShutdownReason reason, Object? e, StackTrace? stackTrace)? onShutdown}) async {
+  Future<void> listenShutdown(
+      {FutureOr<void> Function(AudioIsolateShutdownReason reason, Object? e,
+              StackTrace? stackTrace)?
+          onShutdown}) async {
     try {
       final reason = await _shutdownCompleter.future;
       await onShutdown?.call(reason, null, null);

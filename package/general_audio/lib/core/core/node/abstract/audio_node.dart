@@ -24,6 +24,11 @@ abstract class AudioNode {
 /// [AudioFilterNode] is the handy base class for audio filter nodes.
 ///
 /// If you want to create an audio filter, you should extend this class and implement the process method.
-abstract class AudioFilterNode extends AudioNode with SingleInNodeMixin, SingleOutNodeMixin, ProcessorNodeMixin, BypassNodeMixin {
+abstract class AudioFilterNode extends AudioNode
+    with
+        SingleInNodeMixin,
+        SingleOutNodeMixin,
+        ProcessorNodeMixin,
+        BypassNodeMixin {
   AudioFilterNode();
 }

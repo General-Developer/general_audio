@@ -23,6 +23,7 @@ class GeneralAudio extends GeneralAudioBase {
   }
 
   @override
+
   /// Auomatic Create OR Get Record Or Update
   /// Automatic create if not found unique id
   /// automatic get record if found unique
@@ -31,18 +32,20 @@ class GeneralAudio extends GeneralAudioBase {
     required String outputRecordFilePath,
     String? uniqueId,
     int? sampleRate,
-        int? channels,
-
+    int? channels,
   }) {
     final String audioUniqueId = uniqueId ?? generateUuid(10);
-    final GeneralAudioRecorder? generalAudioRecorder = recorderStates[audioUniqueId];
-    final GeneralAudioRecorderMessage generalAudioRecorderMessage = GeneralAudioRecorderMessage(
+    final GeneralAudioRecorder? generalAudioRecorder =
+        recorderStates[audioUniqueId];
+    final GeneralAudioRecorderMessage generalAudioRecorderMessage =
+        GeneralAudioRecorderMessage(
       audioDeviceBackend: null,
       audioDeviceId: null,
       saveToFilePath: outputRecordFilePath,
     );
     if (generalAudioRecorder is GeneralAudioRecorder) {
-      generalAudioRecorder.generalAudioRecorderMessage = generalAudioRecorderMessage;
+      generalAudioRecorder.generalAudioRecorderMessage =
+          generalAudioRecorderMessage;
       generalAudioRecorder.onStop = () {
         recorderStates.remove(audioUniqueId);
       };

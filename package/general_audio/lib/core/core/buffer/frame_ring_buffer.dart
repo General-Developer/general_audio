@@ -20,17 +20,21 @@ class FrameRingBuffer {
 
   int write(AudioBuffer buffer) {
     assert(buffer.format.isSameFormat(format));
-    return _ringBuffer.write(buffer.pBuffer.cast(), 0, buffer.sizeInBytes) ~/ format.bytesPerFrame;
+    return _ringBuffer.write(buffer.pBuffer.cast(), 0, buffer.sizeInBytes) ~/
+        format.bytesPerFrame;
   }
 
   int read(AudioBuffer buffer, {bool advance = true}) {
     assert(buffer.format.isSameFormat(format));
-    return _ringBuffer.read(buffer.pBuffer.cast(), 0, buffer.sizeInBytes, advance: advance) ~/ format.bytesPerFrame;
+    return _ringBuffer.read(buffer.pBuffer.cast(), 0, buffer.sizeInBytes,
+            advance: advance) ~/
+        format.bytesPerFrame;
   }
 
   int copyTo(FrameRingBuffer buffer, {required bool advance}) {
     assert(buffer.format.isSameFormat(format));
-    return _ringBuffer.copyTo(buffer._ringBuffer, advance: advance) ~/ format.bytesPerFrame;
+    return _ringBuffer.copyTo(buffer._ringBuffer, advance: advance) ~/
+        format.bytesPerFrame;
   }
 
   void clear() {

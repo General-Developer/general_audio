@@ -29,7 +29,8 @@ class MaLogData {
 class CaLog {
   CaLog() {
     _interop.bindings.ca_log_init(_pLog).throwMaResultIfNeeded();
-    _interop.bindings.ca_log_set_notification(_pLog, _receivePort.sendPort.nativePort);
+    _interop.bindings
+        .ca_log_set_notification(_pLog, _receivePort.sendPort.nativePort);
 
     _interop.onInitialized();
 
@@ -59,15 +60,18 @@ class CaLog {
           sizeOf<IntPtr>(),
           (ppMessages) {
             pCount.value = count;
-            _interop.bindings.ca_log_get_messages(_pLog, ppMessages.cast(), pCount);
+            _interop.bindings
+                .ca_log_get_messages(_pLog, ppMessages.cast(), pCount);
 
             final pMessages = Pointer.fromAddress(ppMessages.value);
             final logs = List.generate(
               pCount.value,
               (index) {
-                final pMessage = Pointer<ca_log_message>.fromAddress(pMessages.address + index * sizeOf<ca_log_message>());
+                final pMessage = Pointer<ca_log_message>.fromAddress(
+                    pMessages.address + index * sizeOf<ca_log_message>());
                 return MaLogData(
-                  level: MaLogLevel.values.firstWhere((l) => l.maValue == pMessage.ref.level),
+                  level: MaLogLevel.values
+                      .firstWhere((l) => l.maValue == pMessage.ref.level),
                   message: pMessage.ref.pMessage.cast<Utf8>().toDartString(),
                 );
               },

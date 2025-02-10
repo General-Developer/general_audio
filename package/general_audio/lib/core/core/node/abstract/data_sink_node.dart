@@ -8,7 +8,8 @@ abstract class DataSinkNode extends AudioNode with SingleInNodeMixin {
   AudioFormat? get inputFormat;
 
   @override
-  late final inputBus = AudioInputBus(node: this, formatResolver: (_) => inputFormat);
+  late final inputBus =
+      AudioInputBus(node: this, formatResolver: (_) => inputFormat);
 
   @override
   AudioReadResult read(AudioOutputBus outputBus, AudioBuffer buffer) {

@@ -16,7 +16,8 @@ extension IntExtension on int {
   }
 
   SampleFormat asSampleFormat() {
-    return SampleFormat.values.firstWhere((r) => r.maFormat == this, orElse: () => throw Exception('Unsupported ma_format: $this'));
+    return SampleFormat.values.firstWhere((r) => r.maFormat == this,
+        orElse: () => throw Exception('Unsupported ma_format: $this'));
   }
 
   T whenSeekOrigin<T>({

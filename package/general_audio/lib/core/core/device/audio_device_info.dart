@@ -22,12 +22,29 @@ class AudioDeviceInfo {
     required void Function(Pointer<ma_device_info> handle) configure,
   }) {
     final memory = Memory();
-    final pInfo = memory.allocator.allocate<ma_device_info>(sizeOf<ma_device_info>());
+    final pInfo =
+        memory.allocator.allocate<ma_device_info>(sizeOf<ma_device_info>());
     try {
       configure(pInfo);
 
       // MEMO: Assuming id field is always the first field in ca_device_info.
-      final id = switch (backend) { AudioDeviceBackend.coreAudio => AudioDeviceId.fromPointer(pInfo.cast(), 256), AudioDeviceBackend.aaudio => AudioDeviceId.fromPointer(pInfo.cast(), sizeOf<Int>()), AudioDeviceBackend.openSLES => AudioDeviceId.fromPointer(pInfo.cast(), sizeOf<Int>()), AudioDeviceBackend.wasapi => AudioDeviceId.fromPointer(pInfo.cast(), 256), AudioDeviceBackend.alsa => AudioDeviceId.fromPointer(pInfo.cast(), 256), AudioDeviceBackend.pulseAudio => AudioDeviceId.fromPointer(pInfo.cast(), 256), AudioDeviceBackend.jack => AudioDeviceId.fromPointer(pInfo.cast(), sizeOf<Int>()), AudioDeviceBackend.dummy => AudioDeviceId.fromPointer(pInfo.cast(), sizeOf<Int>()) };
+      final id = switch (backend) {
+        AudioDeviceBackend.coreAudio =>
+          AudioDeviceId.fromPointer(pInfo.cast(), 256),
+        AudioDeviceBackend.aaudio =>
+          AudioDeviceId.fromPointer(pInfo.cast(), sizeOf<Int>()),
+        AudioDeviceBackend.openSLES =>
+          AudioDeviceId.fromPointer(pInfo.cast(), sizeOf<Int>()),
+        AudioDeviceBackend.wasapi =>
+          AudioDeviceId.fromPointer(pInfo.cast(), 256),
+        AudioDeviceBackend.alsa => AudioDeviceId.fromPointer(pInfo.cast(), 256),
+        AudioDeviceBackend.pulseAudio =>
+          AudioDeviceId.fromPointer(pInfo.cast(), 256),
+        AudioDeviceBackend.jack =>
+          AudioDeviceId.fromPointer(pInfo.cast(), sizeOf<Int>()),
+        AudioDeviceBackend.dummy =>
+          AudioDeviceId.fromPointer(pInfo.cast(), sizeOf<Int>())
+      };
       final name = pInfo.ref.name.getUtf8String(256);
       final isDefault = pInfo.ref.isDefault.asMaBool();
 

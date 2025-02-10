@@ -13,11 +13,14 @@ class AudioDeviceNotification {
     required this.state,
   });
 
-  factory AudioDeviceNotification.fromPointer(Pointer<ca_device_notification> pNotification) {
+  factory AudioDeviceNotification.fromPointer(
+      Pointer<ca_device_notification> pNotification) {
     final notification = pNotification.ref;
     return AudioDeviceNotification(
-      type: AudioDeviceNotificationType.values.firstWhere((e) => notification.type == e.maValue),
-      state: AudioDeviceState.values.firstWhere((e) => notification.state == e.maValue),
+      type: AudioDeviceNotificationType.values
+          .firstWhere((e) => notification.type == e.maValue),
+      state: AudioDeviceState.values
+          .firstWhere((e) => notification.state == e.maValue),
     );
   }
 
@@ -42,10 +45,12 @@ enum AudioDeviceNotificationType {
   /// The device has been interrupted.
   ///
   /// This can happen on iOS when some situation occurs, such as a phone call.
-  interruptionBegan(ma_device_notification_type.ma_device_notification_type_interruption_began),
+  interruptionBegan(ma_device_notification_type
+      .ma_device_notification_type_interruption_began),
 
   /// The device's interruption has ended.
-  interruptionEnded(ma_device_notification_type.ma_device_notification_type_interruption_ended);
+  interruptionEnded(ma_device_notification_type
+      .ma_device_notification_type_interruption_ended);
 
   const AudioDeviceNotificationType(this.maValue);
   final int maValue;

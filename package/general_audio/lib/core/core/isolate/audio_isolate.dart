@@ -5,11 +5,15 @@ import 'package:general_audio/core/general_audio.dart';
 import 'package:general_audio/core/experimental.dart';
 import 'package:general_audio/core/core/isolate/audio_isolate_worker_message.dart';
 
-Future<void> _audioIsolateRunner<TInitialMessage>(SendPort sendPort, {AudioIsolateWorker? worker}) async {
+Future<void> _audioIsolateRunner<TInitialMessage>(SendPort sendPort,
+    {AudioIsolateWorker? worker}) async {
   final messenger = AudioIsolateWorkerMessenger()..attach(sendPort);
-  sendPort.send(AudioIsolateLaunchedResponse(sendPort: messenger.hostToWorkerSendPort));
+  sendPort.send(
+      AudioIsolateLaunchedResponse(sendPort: messenger.hostToWorkerSendPort));
 
-  final req = (await messenger.message.firstWhere((r) => r is AudioIsolateRunRequest<TInitialMessage>)) as AudioIsolateRunRequest<dynamic>;
+  final req = (await messenger.message
+          .firstWhere((r) => r is AudioIsolateRunRequest<TInitialMessage>))
+      as AudioIsolateRunRequest<dynamic>;
 
   var isShutdownRequested = false;
 
@@ -18,10 +22,12 @@ Future<void> _audioIsolateRunner<TInitialMessage>(SendPort sendPort, {AudioIsola
       await req.worker(req.initialMessage, messenger);
       if (!isShutdownRequested) {
         messenger.onWorkerFinished();
-        sendPort.send(const AudioIsolateShutdownResponse(reason: AudioIsolateShutdownReason.workerFinished));
+        sendPort.send(const AudioIsolateShutdownResponse(
+            reason: AudioIsolateShutdownReason.workerFinished));
       }
     } catch (e, s) {
-      messenger.hostToWorkerSendPort.send(AudioIsolateWorkerFailedResponse(0, e, s));
+      messenger.hostToWorkerSendPort
+          .send(AudioIsolateWorkerFailedResponse(0, e, s));
       sendPort.send(
         AudioIsolateShutdownResponse(
           reason: AudioIsolateShutdownReason.exception,
@@ -34,11 +40,13 @@ Future<void> _audioIsolateRunner<TInitialMessage>(SendPort sendPort, {AudioIsola
 
   Future<void> gracefulStop() async {
     try {
-      final request = await messenger.message.firstWhere((r) => r is AudioIsolateShutdownRequest);
+      final request = await messenger.message
+          .firstWhere((r) => r is AudioIsolateShutdownRequest);
       messenger.onShutdownRequested(request as AudioIsolateShutdownRequest);
       isShutdownRequested = true;
 
-      sendPort.send(const AudioIsolateShutdownResponse(reason: AudioIsolateShutdownReason.hostRequested));
+      sendPort.send(const AudioIsolateShutdownResponse(
+          reason: AudioIsolateShutdownReason.hostRequested));
     } on StateError {
       return;
     }
@@ -56,7 +64,8 @@ Future<void> _audioIsolateRunner<TInitialMessage>(SendPort sendPort, {AudioIsola
   }
 }
 
-typedef AudioIsolateWorker<TInitialMessage> = FutureOr<void> Function(TInitialMessage? initialMessage, AudioIsolateWorkerMessenger messenger);
+typedef AudioIsolateWorker<TInitialMessage> = FutureOr<void> Function(
+    TInitialMessage? initialMessage, AudioIsolateWorkerMessenger messenger);
 
 class AudioIsolate<TInitialMessage> {
   AudioIsolate(this._worker) {
@@ -71,7 +80,8 @@ class AudioIsolate<TInitialMessage> {
 
   bool get isLaunched => _session != null;
 
-  Future<AudioIsolateLaunchedResponse> launch({TInitialMessage? initialMessage}) async {
+  Future<AudioIsolateLaunchedResponse> launch(
+      {TInitialMessage? initialMessage}) async {
     if (_session != null) {
       throw StateError('AudioIsolate is already running');
     }
@@ -139,14 +149,17 @@ class AudioIsolate<TInitialMessage> {
         _messenger = AudioIsolateHostMessenger();
         _messenger.message.listen(_messengerListener);
 
-        if (response.exception != null && !session.launchCompleter.isCompleted) {
-          session.launchCompleter.completeError(response.exception!, response.stackTrace!);
+        if (response.exception != null &&
+            !session.launchCompleter.isCompleted) {
+          session.launchCompleter
+              .completeError(response.exception!, response.stackTrace!);
         }
 
         if (response.exception == null) {
           session.lifecycleCompleter.complete(response);
         } else {
-          session.lifecycleCompleter.completeError(response.exception!, response.stackTrace!);
+          session.lifecycleCompleter
+              .completeError(response.exception!, response.stackTrace!);
         }
 
         session.shutdownCompleter.complete(response);
@@ -161,6 +174,7 @@ class _AudioIsolateSession<TInitialMessage> {
   final TInitialMessage? initialMessage;
   final Isolate isolate;
   final Completer<AudioIsolateLaunchedResponse> launchCompleter = Completer();
-  final Completer<AudioIsolateShutdownResponse> lifecycleCompleter = Completer();
+  final Completer<AudioIsolateShutdownResponse> lifecycleCompleter =
+      Completer();
   final Completer<AudioIsolateShutdownResponse> shutdownCompleter = Completer();
 }

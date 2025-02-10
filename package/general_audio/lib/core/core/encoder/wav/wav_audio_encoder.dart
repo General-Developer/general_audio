@@ -49,16 +49,19 @@ class WavAudioEncoder extends AudioEncoder {
       {
         pChunk.ref.id.setAsciiString('RIFF', nullTerminated: false);
         pChunk.ref.size = 0;
-        dataSource.writeBytes(pChunk.cast<ffi.Uint8>().asTypedList(chunkLength));
+        dataSource
+            .writeBytes(pChunk.cast<ffi.Uint8>().asTypedList(chunkLength));
 
         pRiffData.ref.format.setAsciiString('WAVE', nullTerminated: false);
-        dataSource.writeBytes(pRiffData.cast<ffi.Uint8>().asTypedList(riffLength));
+        dataSource
+            .writeBytes(pRiffData.cast<ffi.Uint8>().asTypedList(riffLength));
       }
 
       {
         pChunk.ref.id.setAsciiString('fmt ', nullTerminated: false);
         pChunk.ref.size = fmtLength;
-        dataSource.writeBytes(pChunk.cast<ffi.Uint8>().asTypedList(chunkLength));
+        dataSource
+            .writeBytes(pChunk.cast<ffi.Uint8>().asTypedList(chunkLength));
 
         switch (inputFormat.sampleFormat) {
           case SampleFormat.uint8:
@@ -72,16 +75,20 @@ class WavAudioEncoder extends AudioEncoder {
 
         pFmtData.ref.channels = inputFormat.channels;
         pFmtData.ref.sampleRate = inputFormat.sampleRate;
-        pFmtData.ref.bytesPerSecond = inputFormat.sampleRate * inputFormat.channels * inputFormat.sampleFormat.size;
+        pFmtData.ref.bytesPerSecond = inputFormat.sampleRate *
+            inputFormat.channels *
+            inputFormat.sampleFormat.size;
         pFmtData.ref.bytesPerFrame = inputFormat.bytesPerFrame;
         pFmtData.ref.bitsPerSample = inputFormat.sampleFormat.size * 8;
-        dataSource.writeBytes(pFmtData.cast<ffi.Uint8>().asTypedList(fmtLength));
+        dataSource
+            .writeBytes(pFmtData.cast<ffi.Uint8>().asTypedList(fmtLength));
       }
 
       {
         pChunk.ref.id.setAsciiString('data', nullTerminated: false);
         pChunk.ref.size = 0;
-        dataSource.writeBytes(pChunk.cast<ffi.Uint8>().asTypedList(chunkLength));
+        dataSource
+            .writeBytes(pChunk.cast<ffi.Uint8>().asTypedList(chunkLength));
       }
 
       _isStarted = true;

@@ -5,7 +5,8 @@ abstract class AudioSampleRateConverterConfig {
 }
 
 /// A linear audio resampler.
-class LinearAudioSampleRateConverterConfig extends AudioSampleRateConverterConfig {
+class LinearAudioSampleRateConverterConfig
+    extends AudioSampleRateConverterConfig {
   const LinearAudioSampleRateConverterConfig({this.lpfOrder = 1});
 
   /// The order of the low-pass filter used by the resampler.

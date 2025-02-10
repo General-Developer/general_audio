@@ -73,11 +73,15 @@ class AudioFormatConverter with AudioResourceMixin {
   void reset() => _native.reset();
 
   /// Gets the number of input frames required to produce [outputFrameCount] frames.
-  int getRequiredInputFrameCount({required int outputFrameCount}) => _native.getRequiredInputFrameCount(outputFrameCount: outputFrameCount);
+  int getRequiredInputFrameCount({required int outputFrameCount}) =>
+      _native.getRequiredInputFrameCount(outputFrameCount: outputFrameCount);
 
   /// Gets the number of output frames expected to be produced from [inputFrameCount] frames.
-  int getExpectedOutputFrameCount({required int inputFrameCount}) => _native.getExpectedOutputFrameCount(inputFrameCount: inputFrameCount);
+  int getExpectedOutputFrameCount({required int inputFrameCount}) =>
+      _native.getExpectedOutputFrameCount(inputFrameCount: inputFrameCount);
 
   /// Converts audio data format from [inputFormat] to [outputFormat] and writes the result to [output].
-  AudioFormatConverterResult convert({required AudioBuffer input, required AudioBuffer output}) => _native.process(input, output);
+  AudioFormatConverterResult convert(
+          {required AudioBuffer input, required AudioBuffer output}) =>
+      _native.process(input, output);
 }

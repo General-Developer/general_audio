@@ -22,7 +22,8 @@ abstract class GeneralAudioRecorderBaseCore {
   Future<void> stop();
 }
 
-abstract class GeneralAudioRecorderBase implements GeneralAudioRecorderBaseCore {
+abstract class GeneralAudioRecorderBase
+    implements GeneralAudioRecorderBaseCore {
   final String uniqueId;
   GeneralAudioRecorderMessage generalAudioRecorderMessage;
   void Function() onStop;

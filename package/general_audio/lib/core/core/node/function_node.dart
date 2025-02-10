@@ -29,7 +29,8 @@ class FunctionNode extends DataSourceNode {
   @override
   final AudioFormat outputFormat;
 
-  late final void Function(AudioOutputBus outputBus, AudioBuffer buffer) _readFunc;
+  late final void Function(AudioOutputBus outputBus, AudioBuffer buffer)
+      _readFunc;
 
   AudioTime _advance;
 
@@ -65,7 +66,8 @@ class FunctionNode extends DataSourceNode {
     for (var i = 0; list.length > i; i += outputFormat.channels) {
       final sample = function.compute(time);
       for (var ch = 0; outputFormat.channels > ch; ch++) {
-        list[i + ch] = max((sample * SampleFormat.int16.max).toInt(), SampleFormat.int16.min.toInt());
+        list[i + ch] = max((sample * SampleFormat.int16.max).toInt(),
+            SampleFormat.int16.min.toInt());
       }
       time += _advance;
     }
@@ -76,7 +78,8 @@ class FunctionNode extends DataSourceNode {
     for (var i = 0; list.length > i; i += outputFormat.channels) {
       final sample = function.compute(time);
       for (var ch = 0; outputFormat.channels > ch; ch++) {
-        list[i + ch] = max((sample * SampleFormat.int32.max).toInt(), SampleFormat.int32.min.toInt());
+        list[i + ch] = max((sample * SampleFormat.int32.max).toInt(),
+            SampleFormat.int32.min.toInt());
       }
       time += _advance;
     }
@@ -87,7 +90,8 @@ class FunctionNode extends DataSourceNode {
     for (var i = 0; list.length > i; i += outputFormat.channels) {
       final sample = function.compute(time);
       for (var ch = 0; outputFormat.channels > ch; ch++) {
-        list[i + ch] = max((sample * SampleFormat.uint8.max).toInt(), SampleFormat.uint8.min.toInt());
+        list[i + ch] = max((sample * SampleFormat.uint8.max).toInt(),
+            SampleFormat.uint8.min.toInt());
       }
       time += _advance;
     }

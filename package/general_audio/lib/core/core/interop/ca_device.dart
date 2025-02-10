@@ -15,7 +15,8 @@ class CaDevice {
     required this.bufferFrameSize,
     AudioDeviceId? deviceId,
     bool noFixedSizedProcess = true,
-    AudioDevicePerformanceProfile performanceProfile = AudioDevicePerformanceProfile.lowLatency,
+    AudioDevicePerformanceProfile performanceProfile =
+        AudioDevicePerformanceProfile.lowLatency,
     AudioFormatConverterConfig converter = const AudioFormatConverterConfig(),
   }) : _initialDeviceId = deviceId {
     final config = _interop.bindings.ca_device_config_init(
@@ -34,11 +35,16 @@ class CaDevice {
 
     final pDeviceId = _pDeviceId;
     if (pDeviceId != null) {
-      final deviceIdData = pDeviceId.cast<Uint8>().asTypedList(sizeOf<ma_device_id>());
+      final deviceIdData =
+          pDeviceId.cast<Uint8>().asTypedList(sizeOf<ma_device_id>());
       deviceIdData.setAll(0, _initialDeviceId!.data);
-      _interop.bindings.ca_device_init(_pDevice, config, context.ref, pDeviceId).throwMaResultIfNeeded();
+      _interop.bindings
+          .ca_device_init(_pDevice, config, context.ref, pDeviceId)
+          .throwMaResultIfNeeded();
     } else {
-      _interop.bindings.ca_device_init(_pDevice, config, context.ref, nullptr).throwMaResultIfNeeded();
+      _interop.bindings
+          .ca_device_init(_pDevice, config, context.ref, nullptr)
+          .throwMaResultIfNeeded();
     }
 
     notification.listen((notification) {
@@ -66,11 +72,14 @@ class CaDevice {
 
   final AudioDeviceId? _initialDeviceId;
 
-  late final _pDevice = _interop.allocateManaged<ca_device>(sizeOf<ca_device>());
+  late final _pDevice =
+      _interop.allocateManaged<ca_device>(sizeOf<ca_device>());
 
   late final _pVolume = _interop.allocateManaged<Float>(sizeOf<Float>());
 
-  late final _pDeviceId = _initialDeviceId == null ? null : _interop.allocateManaged<ma_device_id>(sizeOf<ma_device_id>());
+  late final _pDeviceId = _initialDeviceId == null
+      ? null
+      : _interop.allocateManaged<ma_device_id>(sizeOf<ma_device_id>());
 
   late final _pFramesRead = _interop.allocateManaged<Int>(sizeOf<Int>());
 
@@ -80,7 +89,12 @@ class CaDevice {
 
   /// The device's notification stream.
   /// Use this stream to detecting route and lifecycle changes.
-  late final notification = _notificationPort.cast<int>().map(Pointer<ca_device_notification>.fromAddress).map((pNotification) => AudioDeviceNotification.fromPointer(pNotification)).asBroadcastStream();
+  late final notification = _notificationPort
+      .cast<int>()
+      .map(Pointer<ca_device_notification>.fromAddress)
+      .map(
+          (pNotification) => AudioDeviceNotification.fromPointer(pNotification))
+      .asBroadcastStream();
 
   var _isStarted = false;
 
@@ -101,13 +115,17 @@ class CaDevice {
 
   /// The current volume of the device.
   double get volume {
-    _interop.bindings.ca_device_get_volume(_pDevice, _pVolume).throwMaResultIfNeeded();
+    _interop.bindings
+        .ca_device_get_volume(_pDevice, _pVolume)
+        .throwMaResultIfNeeded();
     return _pVolume.value;
   }
 
   /// Set the volume of the device.
   set volume(double value) {
-    _interop.bindings.ca_device_set_volume(_pDevice, value).throwMaResultIfNeeded();
+    _interop.bindings
+        .ca_device_set_volume(_pDevice, value)
+        .throwMaResultIfNeeded();
   }
 
   AudioDeviceState get state {
@@ -123,8 +141,11 @@ class CaDevice {
   /// You can listen the [notificationStream] to detect device changes.
   /// When no device is specified while constructing the instance, this method returns null.
   AudioDeviceInfo? get deviceInfo {
-    return _interop.allocateTemporary<ma_device_info, AudioDeviceInfo?>(sizeOf<ma_device_info>(), (pInfo) {
-      final result = _interop.bindings.ca_device_get_device_info(_pDevice, pInfo).asMaResult();
+    return _interop.allocateTemporary<ma_device_info, AudioDeviceInfo?>(
+        sizeOf<ma_device_info>(), (pInfo) {
+      final result = _interop.bindings
+          .ca_device_get_device_info(_pDevice, pInfo)
+          .asMaResult();
 
       // MEMO: AAudio returns MA_INVALID_OPERATION when getting device info.
       if (result.code == MaResult.invalidOperation.code) {
@@ -138,7 +159,8 @@ class CaDevice {
       return AudioDeviceInfo(
         type: type,
         configure: (handle) {
-          _interop.memory.copyMemory(handle.cast(), pInfo.cast(), sizeOf<ma_device_info>());
+          _interop.memory.copyMemory(
+              handle.cast(), pInfo.cast(), sizeOf<ma_device_info>());
         },
         backend: context.activeBackend,
       );
@@ -168,7 +190,10 @@ class CaDevice {
 
   /// Read device's internal buffer into [buffer].
   CaptureDeviceReadResult read(AudioBuffer buffer) {
-    final result = _interop.bindings.ca_device_capture_read(_pDevice, buffer.pBuffer.cast(), buffer.sizeInFrames, _pFramesRead).asMaResult();
+    final result = _interop.bindings
+        .ca_device_capture_read(
+            _pDevice, buffer.pBuffer.cast(), buffer.sizeInFrames, _pFramesRead)
+        .asMaResult();
     if (!result.isSuccess && result != MaResult.atEnd) {
       result.throwIfNeeded();
     }
@@ -178,7 +203,10 @@ class CaDevice {
   /// Write the [buffer] data to device's internal buffer.
   /// If you write frames greater than [availableWriteFrames], overflowed frames will be ignored and not written.
   PlaybackDeviceWriteResult write(AudioBuffer buffer) {
-    final result = _interop.bindings.ca_device_playback_write(_pDevice, buffer.pBuffer.cast(), buffer.sizeInFrames, _pFramesWrite).asMaResult();
+    final result = _interop.bindings
+        .ca_device_playback_write(
+            _pDevice, buffer.pBuffer.cast(), buffer.sizeInFrames, _pFramesWrite)
+        .asMaResult();
     if (!result.isSuccess && result != MaResult.atEnd) {
       result.throwIfNeeded();
     }

@@ -14,7 +14,8 @@ class AudioOutputBus extends AudioBus {
   /// Create a [AudioOutputBus] with auto format resolution.
   ///
   /// The format of the bus will be resolved based on the [inputBus]'s format.
-  factory AudioOutputBus.autoFormat({required AudioNode node, required AudioInputBus inputBus}) {
+  factory AudioOutputBus.autoFormat(
+      {required AudioNode node, required AudioInputBus inputBus}) {
     return AudioOutputBus(
       node: node,
       formatResolver: (bus) => inputBus.resolveFormat(),

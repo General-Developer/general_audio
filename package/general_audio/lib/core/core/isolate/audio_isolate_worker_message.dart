@@ -22,7 +22,8 @@ class AudioIsolateWorkerSuccessResponse extends AudioIsolateWorkerResponse {
 }
 
 class AudioIsolateWorkerFailedResponse extends AudioIsolateWorkerResponse {
-  AudioIsolateWorkerFailedResponse(super.requestId, this.exception, this.stackTrace);
+  AudioIsolateWorkerFailedResponse(
+      super.requestId, this.exception, this.stackTrace);
   final Object exception;
   final StackTrace stackTrace;
 }

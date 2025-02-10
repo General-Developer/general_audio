@@ -21,14 +21,16 @@ extension AudioBufferExtension on AudioBuffer {
   /// Fills the buffer with the specified data.
   void fillBytes(int data, {int? frames}) {
     assert((frames ?? sizeInFrames) <= sizeInFrames);
-    memory.setMemory(pBuffer.cast(), data, (frames ?? sizeInFrames) * format.bytesPerFrame);
+    memory.setMemory(
+        pBuffer.cast(), data, (frames ?? sizeInFrames) * format.bytesPerFrame);
   }
 
   /// Copy the buffer into the [dst] buffer.
   void copyTo(AudioBuffer dst, {int? frames}) {
     assert(format.sampleFormat == dst.format.sampleFormat);
     assert((frames ?? sizeInFrames) <= dst.sizeInFrames);
-    memory.copyMemory(dst.pBuffer.cast(), pBuffer.cast(), (frames ?? sizeInFrames) * format.bytesPerFrame);
+    memory.copyMemory(dst.pBuffer.cast(), pBuffer.cast(),
+        (frames ?? sizeInFrames) * format.bytesPerFrame);
   }
 
   /// Treats the buffer as a list of [Uint8] and returns it.
@@ -37,7 +39,9 @@ extension AudioBufferExtension on AudioBuffer {
   /// Modified data is reflected in the buffer.
   Uint8List asUint8ListViewFrames({int? frames}) {
     assert((frames ?? sizeInFrames) <= sizeInFrames);
-    return pBuffer.cast<Uint8>().asTypedList((frames ?? sizeInFrames) * format.channels);
+    return pBuffer
+        .cast<Uint8>()
+        .asTypedList((frames ?? sizeInFrames) * format.channels);
   }
 
   /// Treats the buffer as a list of [Uint8] and returns it.
@@ -55,7 +59,9 @@ extension AudioBufferExtension on AudioBuffer {
   /// Modified data is reflected in the buffer.
   Int16List asInt16ListView({int? frames}) {
     assert((frames ?? sizeInFrames) <= sizeInFrames);
-    return pBuffer.cast<Int16>().asTypedList((frames ?? sizeInFrames) * format.channels);
+    return pBuffer
+        .cast<Int16>()
+        .asTypedList((frames ?? sizeInFrames) * format.channels);
   }
 
   /// Treats the buffer as a list of [Int32] and returns it.
@@ -64,7 +70,9 @@ extension AudioBufferExtension on AudioBuffer {
   /// Modified data is reflected in the buffer.
   Int32List asInt32ListView({int? frames}) {
     assert((frames ?? sizeInFrames) <= sizeInFrames);
-    return pBuffer.cast<Int32>().asTypedList((frames ?? sizeInFrames) * format.channels);
+    return pBuffer
+        .cast<Int32>()
+        .asTypedList((frames ?? sizeInFrames) * format.channels);
   }
 
   /// Treats the buffer as a list of [Float32] and returns it.
@@ -73,7 +81,9 @@ extension AudioBufferExtension on AudioBuffer {
   /// Modified data is reflected in the buffer.
   Float32List asFloat32ListView({int? frames}) {
     assert((frames ?? sizeInFrames) <= sizeInFrames);
-    return pBuffer.cast<Float>().asTypedList((frames ?? sizeInFrames) * format.channels);
+    return pBuffer
+        .cast<Float>()
+        .asTypedList((frames ?? sizeInFrames) * format.channels);
   }
 
   /// Copy the buffer as a list of [Float32] and returns it.
@@ -90,7 +100,8 @@ extension AudioBufferExtension on AudioBuffer {
     final channelSize = deinterleaved.length ~/ format.channels;
     for (var i = 0; deinterleaved.length > i; i += format.channels) {
       for (var ch = 0; format.channels > ch; ch++) {
-        deinterleaved[(i ~/ format.channels) + (ch * channelSize)] = floatList[i + ch];
+        deinterleaved[(i ~/ format.channels) + (ch * channelSize)] =
+            floatList[i + ch];
       }
     }
     return deinterleaved;

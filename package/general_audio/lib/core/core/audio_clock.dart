@@ -82,7 +82,8 @@ class AudioLoopClock extends AudioClock {
   bool get isStarted => _stopwatch.isRunning;
 
   @override
-  AudioTime get elapsedTime => AudioTime(_stopwatch.elapsedMicroseconds / 1000 / 1000);
+  AudioTime get elapsedTime =>
+      AudioTime(_stopwatch.elapsedMicroseconds / 1000 / 1000);
 
   @override
   void start({required AudioClockCallback onTick}) {

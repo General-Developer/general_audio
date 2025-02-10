@@ -6,7 +6,9 @@ import 'package:general_audio/core/general_audio.dart';
 /// An audio data source for a file.
 ///
 /// This class implements both [AudioInputDataSource] and [AudioOutputDataSource].
-class AudioFileDataSource with AudioResourceMixin implements AudioInputDataSource, AudioOutputDataSource {
+class AudioFileDataSource
+    with AudioResourceMixin
+    implements AudioInputDataSource, AudioOutputDataSource {
   /// Creates an audio data source for a file.
   ///
   /// If [cacheLength] is true, the length of the file will be cached as soon as instantiated.

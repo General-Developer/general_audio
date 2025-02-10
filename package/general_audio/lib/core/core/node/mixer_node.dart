@@ -35,14 +35,17 @@ class MixerNode extends AudioNode with SingleOutNodeMixin {
   /// e.g. If the sample format is [SampleFormat.float32], the value is clamped to the range of -1.0 to 1.0.
   bool isClampEnabled;
 
-  late final void Function(AudioBuffer bufferIn, AudioBuffer mixerOut, int totalReadFrames) _mixerFunc;
+  late final void Function(
+          AudioBuffer bufferIn, AudioBuffer mixerOut, int totalReadFrames)
+      _mixerFunc;
 
   final _inputs = <AudioInputBus>[];
 
   late final _audioFrame = DynamicAudioFrames(format: format);
 
   @override
-  late final outputBus = AudioOutputBus(node: this, formatResolver: (_) => format);
+  late final outputBus =
+      AudioOutputBus(node: this, formatResolver: (_) => format);
 
   @override
   List<AudioInputBus> get inputs => List.unmodifiable(_inputs);
@@ -71,7 +74,8 @@ class MixerNode extends AudioNode with SingleOutNodeMixin {
     _inputs.remove(bus);
   }
 
-  void _mixFloat32(AudioBuffer bufferIn, AudioBuffer mixerOut, int totalReadFrames) {
+  void _mixFloat32(
+      AudioBuffer bufferIn, AudioBuffer mixerOut, int totalReadFrames) {
     final inFloatList = bufferIn.asFloat32ListView();
     final outFloatList = mixerOut.asFloat32ListView();
     for (var i = 0; (totalReadFrames * format.channels) > i; i++) {
@@ -79,7 +83,8 @@ class MixerNode extends AudioNode with SingleOutNodeMixin {
     }
   }
 
-  void _mixInt16(AudioBuffer bufferIn, AudioBuffer mixerOut, int totalReadFrames) {
+  void _mixInt16(
+      AudioBuffer bufferIn, AudioBuffer mixerOut, int totalReadFrames) {
     final inInt16List = bufferIn.asInt16ListView();
     final outInt16List = mixerOut.asInt16ListView();
     for (var i = 0; (totalReadFrames * format.channels) > i; i++) {
@@ -87,7 +92,8 @@ class MixerNode extends AudioNode with SingleOutNodeMixin {
     }
   }
 
-  void _mixInt32(AudioBuffer bufferIn, AudioBuffer mixerOut, int totalReadFrames) {
+  void _mixInt32(
+      AudioBuffer bufferIn, AudioBuffer mixerOut, int totalReadFrames) {
     final inInt32List = bufferIn.asInt32ListView();
     final outInt32List = mixerOut.asInt32ListView();
     for (var i = 0; (totalReadFrames * format.channels) > i; i++) {
@@ -95,7 +101,8 @@ class MixerNode extends AudioNode with SingleOutNodeMixin {
     }
   }
 
-  void _mixUint8(AudioBuffer bufferIn, AudioBuffer mixerOut, int totalReadFrames) {
+  void _mixUint8(
+      AudioBuffer bufferIn, AudioBuffer mixerOut, int totalReadFrames) {
     final inUint8List = bufferIn.asUint8ListViewFrames();
     final outUint8List = mixerOut.asUint8ListViewFrames();
     for (var i = 0; (totalReadFrames * format.channels) > i; i++) {
@@ -131,7 +138,8 @@ class MixerNode extends AudioNode with SingleOutNodeMixin {
 
         // read until the buffer is full or the source is ended
         while (left > 0 && readResult.frameCount > 0 && !readResult.isEnd) {
-          readResult = bus.connectedBus!.read(busBuffer.offset(totalReadFrames));
+          readResult =
+              bus.connectedBus!.read(busBuffer.offset(totalReadFrames));
           if (!readResult.isEnd) {
             isEnd = false;
           }

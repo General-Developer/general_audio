@@ -64,7 +64,8 @@ class DynamicAudioFrames extends AudioFrames with AudioResourceMixin {
 
   @override
   AudioBuffer lock() {
-    final lastBuffer = _internalBuffer ?? AllocatedAudioFrames(length: _sizeInFrames, format: format);
+    final lastBuffer = _internalBuffer ??
+        AllocatedAudioFrames(length: _sizeInFrames, format: format);
     _internalBuffer ??= lastBuffer;
 
     return lastBuffer.lock().limit(sizeInFrames);

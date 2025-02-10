@@ -11,5 +11,6 @@ abstract class DataSourceNode extends AudioNode with SingleOutNodeMixin {
   List<AudioInputBus> get inputs => const [];
 
   @override
-  late final outputBus = AudioOutputBus(node: this, formatResolver: (_) => outputFormat);
+  late final outputBus =
+      AudioOutputBus(node: this, formatResolver: (_) => outputFormat);
 }

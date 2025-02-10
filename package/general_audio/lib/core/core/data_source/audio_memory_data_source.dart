@@ -6,7 +6,8 @@ import 'package:general_audio/core/general_audio.dart';
 /// An audio data source for a memory buffer.
 ///
 /// This class implements both [AudioInputDataSource] and [AudioOutputDataSource].
-class AudioMemoryDataSource implements AudioInputDataSource, AudioOutputDataSource {
+class AudioMemoryDataSource
+    implements AudioInputDataSource, AudioOutputDataSource {
   /// Creates an audio data source for a memory buffer.
   AudioMemoryDataSource({
     List<int>? buffer,

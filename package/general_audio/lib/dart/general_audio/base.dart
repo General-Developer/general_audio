@@ -14,7 +14,6 @@ abstract class GeneralAudioBaseCore {
     String? uniqueId,
     int? sampleRate,
     int? channels,
-
   });
 }
 

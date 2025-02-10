@@ -9,10 +9,12 @@ class AudioTime {
   AudioTime.fromFrames(
     int frames, {
     required AudioFormat format,
-  }) : seconds = (frames * format.bytesPerFrame) / (format.sampleRate * format.sampleFormat.size * format.channels);
+  }) : seconds = (frames * format.bytesPerFrame) /
+            (format.sampleRate * format.sampleFormat.size * format.channels);
 
   /// Constructs an [AudioTime] from [duration].
-  AudioTime.fromDuration(Duration duration) : seconds = duration.inMicroseconds / Duration.microsecondsPerSecond;
+  AudioTime.fromDuration(Duration duration)
+      : seconds = duration.inMicroseconds / Duration.microsecondsPerSecond;
 
   static AudioTime zero = const AudioTime(0);
 
@@ -36,12 +38,17 @@ class AudioTime {
 
   /// Compute the number of frames from [format].
   int computeFrames(AudioFormat format) {
-    return (seconds * format.sampleRate * format.sampleFormat.size * format.channels) ~/ format.bytesPerFrame;
+    return (seconds *
+            format.sampleRate *
+            format.sampleFormat.size *
+            format.channels) ~/
+        format.bytesPerFrame;
   }
 
   /// Compute the [Duration] from [seconds].
   Duration get duration {
-    return Duration(microseconds: (seconds * Duration.microsecondsPerSecond).toInt());
+    return Duration(
+        microseconds: (seconds * Duration.microsecondsPerSecond).toInt());
   }
 
   AudioTime operator +(AudioTime other) {

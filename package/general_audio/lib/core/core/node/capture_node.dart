@@ -14,7 +14,8 @@ class CaptureNode extends AudioNode with SingleOutNodeMixin {
   final List<AudioInputBus> inputs = const [];
 
   @override
-  late final outputBus = AudioOutputBus(node: this, formatResolver: (_) => device.format);
+  late final outputBus =
+      AudioOutputBus(node: this, formatResolver: (_) => device.format);
 
   @override
   AudioReadResult read(AudioOutputBus outputBus, AudioBuffer buffer) {

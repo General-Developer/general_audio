@@ -15,10 +15,12 @@ class DelayNode extends AudioFilterNode {
   final AudioFormat format;
 
   @override
-  late final inputBus = AudioInputBus(node: this, formatResolver: (_) => format);
+  late final inputBus =
+      AudioInputBus(node: this, formatResolver: (_) => format);
 
   @override
-  late final outputBus = AudioOutputBus(node: this, formatResolver: (_) => format);
+  late final outputBus =
+      AudioOutputBus(node: this, formatResolver: (_) => format);
 
   double decay;
   double dry;
@@ -44,9 +46,12 @@ class DelayNode extends AudioFilterNode {
         if (delayStart) {
           final sample = floatList[bufferIndex];
           floatList[bufferIndex] = _delayBuffer[delayBufferIndex] * wet;
-          _delayBuffer[delayBufferIndex] = (_delayBuffer[delayBufferIndex] * decay) + (sample * dry);
+          _delayBuffer[delayBufferIndex] =
+              (_delayBuffer[delayBufferIndex] * decay) + (sample * dry);
         } else {
-          _delayBuffer[delayBufferIndex] = (_delayBuffer[delayBufferIndex] * decay) + (floatList[bufferIndex] * dry);
+          _delayBuffer[delayBufferIndex] =
+              (_delayBuffer[delayBufferIndex] * decay) +
+                  (floatList[bufferIndex] * dry);
           floatList[bufferIndex] = _delayBuffer[delayBufferIndex] * wet;
         }
 

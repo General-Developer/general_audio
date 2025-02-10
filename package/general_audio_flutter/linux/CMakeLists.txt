@@ -17,9 +17,3 @@ set(general_audio_flutter_bundled_libraries
 
   PARENT_SCOPE
 )
-
-# package/general_audio_flutter/linux/libgeneral_ai_fast_text_to_speech.so
-# package/general_audio_flutter/linux/libonnxruntime_providers_shared.so
-# package/general_audio_flutter/linux/libonnxruntime.so
-# package/general_audio_flutter/linux/libonnxruntime.so.1
-# package/general_audio_flutter/linux/libonnxruntime.so.1.20.1
