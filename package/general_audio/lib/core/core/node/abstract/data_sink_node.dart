@@ -52,6 +52,6 @@ abstract class DataSinkNode extends AudioNode with SingleInNodeMixin {
     return result;
   }
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void process(AudioBuffer buffer, bool isEnd);
 }

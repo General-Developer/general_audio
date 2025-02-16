@@ -50,7 +50,7 @@ class AudioDeviceInfo {
     required this.backend,
   });
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   factory AudioDeviceInfo({
     required AudioDeviceType type,
     required AudioDeviceBackend backend,

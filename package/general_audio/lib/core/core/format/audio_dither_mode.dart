@@ -36,14 +36,17 @@ import '../interop/internal/generated/bindings.dart';
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 enum AudioDitherMode {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   none(ma_dither_mode.ma_dither_mode_none),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   rectangle(ma_dither_mode.ma_dither_mode_rectangle),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   triangle(ma_dither_mode.ma_dither_mode_triangle);
 
   const AudioDitherMode(this.maValue);
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final int maValue;
 }

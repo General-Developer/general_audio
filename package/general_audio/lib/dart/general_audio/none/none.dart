@@ -38,7 +38,7 @@ import 'package:general_lib/general_lib.dart';
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 class GeneralAudio extends GeneralAudioBase {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   GeneralAudio({
     super.sharedLibraryPath,
   });

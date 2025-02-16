@@ -36,7 +36,7 @@ import 'package:general_audio/core/general_audio.dart';
 
 /// [AudioBus] represents a audio node's format and connection.
 abstract class AudioBus {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   AudioBus({required this.node});
 
   /// The node that this bus belongs to.

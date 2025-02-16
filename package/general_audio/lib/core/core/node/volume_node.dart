@@ -36,7 +36,7 @@ import 'package:general_audio/core/general_audio.dart';
 
 /// [VolumeNode] is a node that changes the volume of the audio data.
 class VolumeNode extends AudioFilterNode {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   VolumeNode({required this.volume});
 
   /// The volume of the audio data.

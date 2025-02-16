@@ -39,7 +39,7 @@ import 'package:general_audio/core/general_audio.dart';
 /// When you call [lock], you must call [unlock] when the raw buffer operations is not necessary.
 /// [Memory] will be used internal buffer allocations.
 abstract class AudioFrames {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   const AudioFrames();
 
   /// size of [pBuffer] in bytes.

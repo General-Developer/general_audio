@@ -38,7 +38,7 @@ import 'package:general_audio/core/general_audio.dart';
 
 /// An audio node that generates audio data by a function.
 class FunctionNode extends DataSourceNode {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   FunctionNode({
     required this.function,
     required AudioFormat format,

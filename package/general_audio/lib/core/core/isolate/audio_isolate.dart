@@ -104,7 +104,7 @@ typedef AudioIsolateWorker<TInitialMessage> = FutureOr<void> Function(
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 class AudioIsolate<TInitialMessage> {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   AudioIsolate(this._worker) {
     _messenger.message.listen(_messengerListener);
   }
@@ -115,10 +115,10 @@ class AudioIsolate<TInitialMessage> {
 
   _AudioIsolateSession<TInitialMessage>? _session;
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   bool get isLaunched => _session != null;
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   Future<AudioIsolateLaunchedResponse> launch(
       {TInitialMessage? initialMessage}) async {
     if (_session != null) {
@@ -138,7 +138,7 @@ class AudioIsolate<TInitialMessage> {
     return session.launchCompleter.future;
   }
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   Future<AudioIsolateShutdownResponse> attach() {
     final session = _session;
     if (session == null) {
@@ -148,7 +148,7 @@ class AudioIsolate<TInitialMessage> {
     return session.lifecycleCompleter.future;
   }
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   Future<TResponse?> request<TResponse>(dynamic payload) async {
     if (_session == null) {
       throw StateError('AudioIsolate is not running');
@@ -157,7 +157,7 @@ class AudioIsolate<TInitialMessage> {
     return _messenger.request(payload);
   }
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   Future<AudioIsolateShutdownResponse> shutdown() async {
     final session = _session;
     if (session == null) {

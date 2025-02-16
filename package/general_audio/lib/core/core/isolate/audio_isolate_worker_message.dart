@@ -48,61 +48,72 @@ sealed class AudioIsolateWorkerResponse extends AudioIsolateWorkerMessage {
   }
 
   AudioIsolateWorkerResponse(this.requestId) : id = _getId();
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final int id;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final int requestId;
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 class AudioIsolateWorkerSuccessResponse extends AudioIsolateWorkerResponse {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   AudioIsolateWorkerSuccessResponse(super.requestId, this.payload);
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final dynamic payload;
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 class AudioIsolateWorkerFailedResponse extends AudioIsolateWorkerResponse {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   AudioIsolateWorkerFailedResponse(
       super.requestId, this.exception, this.stackTrace);
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final Object exception;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final StackTrace stackTrace;
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class AudioIsolateLaunchedResponse extends AudioIsolateWorkerMessage {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   const AudioIsolateLaunchedResponse({required this.sendPort});
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final SendPort sendPort;
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class AudioIsolateShutdownResponse extends AudioIsolateWorkerMessage {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   const AudioIsolateShutdownResponse({
     required this.reason,
     this.exception,
     this.stackTrace,
   });
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final AudioIsolateShutdownReason reason;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final Object? exception;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final StackTrace? stackTrace;
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 enum AudioIsolateShutdownReason {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   workerFinished,
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   hostRequested,
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   exception,
 }

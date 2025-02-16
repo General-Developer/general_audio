@@ -41,12 +41,13 @@ import 'package:general_audio/core/core/interop/internal/ma_extension.dart';
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 class CaContext {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   CaContext({
     required List<AudioDeviceBackend> backends,
     Pointer<ma_log>? pLog,
   }) {
-    _interop.allocateTemporary<Int32, void>(sizeOf<Int32>() * backends.length, (pBackends) {
+    _interop.allocateTemporary<Int32, void>(sizeOf<Int32>() * backends.length,
+        (pBackends) {
       final list = pBackends.asTypedList(backends.length);
       for (var i = 0; i < backends.length; i++) {
         list[i] = backends[i].maValue;
@@ -60,7 +61,9 @@ class CaContext {
           pConfig.ref.coreaudio.noAudioSessionDeactivate = true.toMaBool();
           pConfig.ref.pLog = pLog ?? nullptr;
 
-          _interop.bindings.ca_context_init(pBackends, backends.length, pConfig, _pContext).throwMaResultIfNeeded();
+          _interop.bindings
+              .ca_context_init(pBackends, backends.length, pConfig, _pContext)
+              .throwMaResultIfNeeded();
         },
       );
     });
@@ -72,12 +75,14 @@ class CaContext {
 
   final _associatedDevices = <CaDevice>[];
 
-  late final _pContext = _interop.allocateManaged<ca_context>(sizeOf<ma_context>());
+  late final _pContext =
+      _interop.allocateManaged<ca_context>(sizeOf<ma_context>());
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-  Pointer<ma_context> get ref => _interop.bindings.ca_context_get_ref(_pContext);
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  Pointer<ma_context> get ref =>
+      _interop.bindings.ca_context_get_ref(_pContext);
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   AudioDeviceBackend get activeBackend {
     _interop.throwIfDisposed();
     return AudioDeviceBackend.values.firstWhere(
@@ -85,27 +90,36 @@ class CaContext {
     );
   }
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   List<AudioDeviceInfo> getDevices(AudioDeviceType type) {
     _interop.throwIfDisposed();
     final devices = <AudioDeviceInfo>[];
-    _interop.allocateTemporary<UnsignedInt, void>(sizeOf<UnsignedInt>(), (pCount) {
+    _interop.allocateTemporary<UnsignedInt, void>(sizeOf<UnsignedInt>(),
+        (pCount) {
       _interop.allocateTemporary<IntPtr, void>(
         sizeOf<IntPtr>(),
         (ppDevices) {
           switch (type) {
             case AudioDeviceType.capture:
-              _interop.bindings.ma_context_get_devices(ref, nullptr, nullptr, ppDevices.cast(), pCount).throwMaResultIfNeeded();
+              _interop.bindings
+                  .ma_context_get_devices(
+                      ref, nullptr, nullptr, ppDevices.cast(), pCount)
+                  .throwMaResultIfNeeded();
             case AudioDeviceType.playback:
-              _interop.bindings.ma_context_get_devices(ref, ppDevices.cast(), pCount, nullptr, nullptr).throwMaResultIfNeeded();
+              _interop.bindings
+                  .ma_context_get_devices(
+                      ref, ppDevices.cast(), pCount, nullptr, nullptr)
+                  .throwMaResultIfNeeded();
           }
-          final pDevices = Pointer.fromAddress(ppDevices.value).cast<ma_device_info>();
+          final pDevices =
+              Pointer.fromAddress(ppDevices.value).cast<ma_device_info>();
           for (var i = 0; pCount.value > i; i++) {
             final info = AudioDeviceInfo(
               type: type,
               backend: activeBackend,
               configure: (handle) {
-                final pDevice = Pointer<ma_device_info>.fromAddress(pDevices.address + i * sizeOf<ma_device_info>());
+                final pDevice = Pointer<ma_device_info>.fromAddress(
+                    pDevices.address + i * sizeOf<ma_device_info>());
                 handle.ref = pDevice.ref;
               },
             );
@@ -117,14 +131,15 @@ class CaContext {
     return devices;
   }
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   CaDevice createDevice({
     required AudioFormat format,
     required int bufferFrameSize,
     required AudioDeviceType type,
     AudioDeviceId? deviceId,
     bool noFixedSizedProcess = true,
-    AudioDevicePerformanceProfile performanceProfile = AudioDevicePerformanceProfile.lowLatency,
+    AudioDevicePerformanceProfile performanceProfile =
+        AudioDevicePerformanceProfile.lowLatency,
     AudioFormatConverterConfig converter = const AudioFormatConverterConfig(),
   }) {
     _interop.throwIfDisposed();
@@ -142,7 +157,7 @@ class CaContext {
     return device;
   }
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void dispose() {
     for (final device in _associatedDevices) {
       device.dispose();

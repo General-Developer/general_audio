@@ -41,7 +41,7 @@ typedef AudioClockCallback = void Function(AudioClock clock);
 
 /// An audio clock that provides a time reference for audio tasks.
 abstract class AudioClock {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   AudioClock();
 
   /// Whether the clock is started.
@@ -67,7 +67,7 @@ abstract class AudioClock {
 ///
 /// This clock is useful for running audio task without blocking the isolate.
 class AudioIntervalClock extends AudioClock {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   AudioIntervalClock(this.interval);
 
   Timer? _timer;
@@ -111,7 +111,7 @@ class AudioIntervalClock extends AudioClock {
 /// This clock is useful for running audio task as fast as possible like converting audio data.
 /// You should stop the clock inside the callback to prevent the isolate from being blocked.
 class AudioLoopClock extends AudioClock {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   AudioLoopClock();
 
   final _stopwatch = Stopwatch();

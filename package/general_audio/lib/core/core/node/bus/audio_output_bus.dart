@@ -40,7 +40,7 @@ typedef OutputFormatResolver = AudioFormat? Function(AudioOutputBus bus);
 
 /// [AudioOutputBus] represents a audio node's output format and connection.
 class AudioOutputBus extends AudioBus {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   AudioOutputBus({
     required super.node,
     required OutputFormatResolver formatResolver,
@@ -69,7 +69,7 @@ class AudioOutputBus extends AudioBus {
   /// [connectedBus]'s format must be the same as this bus's format.
   AudioInputBus? get connectedBus => _connectedBus;
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void connect(AudioInputBus inputBus) {
     if (node == inputBus.node) {
       throw const AudioBusConnectionException.sameNode();
@@ -83,13 +83,13 @@ class AudioOutputBus extends AudioBus {
     _connectedBus = inputBus;
   }
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void disconnect() {
     _connectedBus?.onDisconnect();
     _connectedBus = null;
   }
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   bool canConnect(AudioInputBus inputBus) {
     if (node == inputBus.node) {
       return false;

@@ -52,6 +52,7 @@ enum AudioDeviceState {
   stopping(ma_device_state.ma_device_state_stopping);
 
   const AudioDeviceState(this.maValue);
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final int maValue;
 }

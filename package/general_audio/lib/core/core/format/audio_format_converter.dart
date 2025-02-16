@@ -37,7 +37,7 @@ import 'package:general_audio/core/core/interop/ma_data_converter.dart';
 
 /// The configuration of an audio format converter.
 class AudioFormatConverterConfig {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   const AudioFormatConverterConfig({
     this.ditherMode = AudioDitherMode.none,
     this.channelMixMode = AudioChannelMixMode.rectangular,
@@ -56,7 +56,7 @@ class AudioFormatConverterConfig {
 
 /// The result of an audio format conversion.
 class AudioFormatConverterResult {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   const AudioFormatConverterResult({
     required this.inputFrameCount,
     required this.outputFrameCount,
@@ -71,7 +71,7 @@ class AudioFormatConverterResult {
 
 /// Converts audio data from one format to another.
 class AudioFormatConverter with AudioResourceMixin {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   AudioFormatConverter({
     required this.inputFormat,
     required this.outputFormat,

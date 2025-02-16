@@ -40,7 +40,7 @@ import '../internal/generated/bindings.dart';
 
 /// An interop helper for the general_audio and miniaudio library.
 final class CoastAudioInterop with AudioResourceMixin {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   CoastAudioInterop() {
     // Set the resource finalizer to free all the managed pointers if the holder instance fails to initialize.
     final captured = (memory, _managedPtrs);

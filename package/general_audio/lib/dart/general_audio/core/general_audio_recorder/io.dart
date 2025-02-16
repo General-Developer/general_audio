@@ -42,7 +42,7 @@ import "dart:math" as math;
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 class GeneralAudioRecorder extends GeneralAudioRecorderBase {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   GeneralAudioRecorder({
     required super.generalAudioRecorderMessage,
     required super.uniqueId,

@@ -161,17 +161,22 @@ class WavAudioDecoder extends AudioDecoder {
     }
   }
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final AudioInputDataSource dataSource;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final int dataChunkOffset;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final int dataChunkLength;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final int bytesPerSample;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final int channels;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final int bytesPerFrame;
 
   @override
@@ -209,9 +214,10 @@ class WavAudioDecoder extends AudioDecoder {
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 class WavFormatException implements Exception {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   const WavFormatException(this.message);
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final String message;
 
   @override

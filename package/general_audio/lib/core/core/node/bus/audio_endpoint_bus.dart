@@ -36,7 +36,7 @@ import 'package:general_audio/core/general_audio.dart';
 
 /// An audio endpoint bus that cannot be connected to any input bus.
 class AudioEndpointBus extends AudioOutputBus {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   AudioEndpointBus({required super.node, required super.formatResolver});
 
   @override
@@ -52,7 +52,7 @@ class AudioEndpointBus extends AudioOutputBus {
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 class AudioEndpointBusConnectionError extends Error {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   AudioEndpointBusConnectionError();
 
   @override

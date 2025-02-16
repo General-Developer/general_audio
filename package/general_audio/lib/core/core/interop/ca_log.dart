@@ -42,40 +42,47 @@ import 'package:ffi/ffi.dart';
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 enum MaLogLevel {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   debug(ma_log_level.MA_LOG_LEVEL_DEBUG),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   info(ma_log_level.MA_LOG_LEVEL_INFO),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   warning(ma_log_level.MA_LOG_LEVEL_WARNING),
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   error(ma_log_level.MA_LOG_LEVEL_ERROR),
   ;
 
   const MaLogLevel(this.maValue);
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final int maValue;
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 class MaLogData {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   const MaLogData({
     required this.level,
     required this.message,
   });
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final MaLogLevel level;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final String message;
 }
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 class CaLog {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   CaLog() {
     _interop.bindings.ca_log_init(_pLog).throwMaResultIfNeeded();
-    _interop.bindings.ca_log_set_notification(_pLog, _receivePort.sendPort.nativePort);
+    _interop.bindings
+        .ca_log_set_notification(_pLog, _receivePort.sendPort.nativePort);
 
     _interop.onInitialized();
 
@@ -93,10 +100,10 @@ class CaLog {
 
   final _receivePort = ReceivePort();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   Pointer<ma_log> get ref => _interop.bindings.ca_log_get_ref(_pLog);
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void Function(MaLogLevel level, String message)? onLog;
 
   List<MaLogData> _getLogs({int count = 256}) {
@@ -107,15 +114,18 @@ class CaLog {
           sizeOf<IntPtr>(),
           (ppMessages) {
             pCount.value = count;
-            _interop.bindings.ca_log_get_messages(_pLog, ppMessages.cast(), pCount);
+            _interop.bindings
+                .ca_log_get_messages(_pLog, ppMessages.cast(), pCount);
 
             final pMessages = Pointer.fromAddress(ppMessages.value);
             final logs = List.generate(
               pCount.value,
               (index) {
-                final pMessage = Pointer<ca_log_message>.fromAddress(pMessages.address + index * sizeOf<ca_log_message>());
+                final pMessage = Pointer<ca_log_message>.fromAddress(
+                    pMessages.address + index * sizeOf<ca_log_message>());
                 return MaLogData(
-                  level: MaLogLevel.values.firstWhere((l) => l.maValue == pMessage.ref.level),
+                  level: MaLogLevel.values
+                      .firstWhere((l) => l.maValue == pMessage.ref.level),
                   message: pMessage.ref.pMessage.cast<Utf8>().toDartString(),
                 );
               },
@@ -130,7 +140,7 @@ class CaLog {
     );
   }
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void dispose() {
     _interop.bindings.ca_log_uninit(_pLog);
     _interop.dispose();

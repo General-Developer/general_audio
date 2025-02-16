@@ -39,7 +39,7 @@ typedef DecodeResultListener = void Function(AudioDecodeResult result);
 
 /// An audio node that decodes audio data by using [AudioDecoder].
 class DecoderNode extends DataSourceNode {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   DecoderNode({required this.decoder});
 
   /// The decoder that decodes audio data.

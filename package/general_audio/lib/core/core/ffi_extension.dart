@@ -37,7 +37,9 @@ import 'dart:ffi';
 import 'package:general_audio/core/general_audio.dart';
 import 'package:ffi/ffi.dart';
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 extension ArrayCharExtension on Array<Char> {
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   String getUtf8String(int maxLength, {bool zeroTerminated = true}) {
     final mem = Memory();
     final pStr = mem.allocator.allocate<Char>(maxLength);
@@ -54,6 +56,7 @@ extension ArrayCharExtension on Array<Char> {
     }
   }
 
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   String getAsciiString(int maxLength, {bool zeroTerminated = true}) {
     var str = '';
     for (var i = 0; maxLength > i; i++) {
@@ -65,6 +68,7 @@ extension ArrayCharExtension on Array<Char> {
     return str;
   }
 
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void setUtf8String(String value) {
     final mem = Memory();
     final pStr = value.toNativeUtf8(allocator: mem.allocator).cast<Char>();
@@ -77,6 +81,7 @@ extension ArrayCharExtension on Array<Char> {
     mem.allocator.free(pStr);
   }
 
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void setAsciiString(
     String value, {
     required bool nullTerminated,

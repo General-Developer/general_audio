@@ -36,7 +36,7 @@ import 'package:general_audio/core/general_audio.dart';
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 class DelayNode extends AudioFilterNode {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   DelayNode({
     required this.delayFrames,
     required this.delayStart,
@@ -46,11 +46,13 @@ class DelayNode extends AudioFilterNode {
     this.wet = 1,
   }) : _delayBuffer = List.filled(delayFrames * format.channels, 0);
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final int delayFrames;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final bool delayStart;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final AudioFormat format;
 
   @override
@@ -61,17 +63,19 @@ class DelayNode extends AudioFilterNode {
   late final outputBus =
       AudioOutputBus(node: this, formatResolver: (_) => format);
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   double decay;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   double dry;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   double wet;
 
   final List<double> _delayBuffer;
   var _cursor = 0;
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void reset() {
     _delayBuffer.fillRange(0, _delayBuffer.length, 0);
     _cursor = 0;

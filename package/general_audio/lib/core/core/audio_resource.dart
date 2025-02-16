@@ -72,6 +72,7 @@ class _AudioResourceHolder {
 final class AudioResourceManager {
   const AudioResourceManager._();
 
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static var isDisposeLogEnabled = false;
 
   /// Disposes the audio resource with the given [resourceId].
@@ -150,9 +151,13 @@ mixin AudioResourceMixin implements Finalizable {
 
 /// An exception that is thrown when an audio resource is already disposed.
 class AudioResourceDisposedException implements Exception {
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   const AudioResourceDisposedException(this.id, this.name);
 
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final int id;
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final String name;
 
   @override

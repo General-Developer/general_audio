@@ -36,7 +36,7 @@ import 'dart:typed_data';
 
 /// An abstract class for audio output data sources.
 abstract class AudioOutputDataSource {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   const AudioOutputDataSource();
 
   /// The current position of the data source.

@@ -43,7 +43,7 @@ import 'package:general_audio/core/core/interop/ma_resampler_config.dart';
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 class CaDevice {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   CaDevice({
     required this.type,
     required this.context,
@@ -98,16 +98,16 @@ class CaDevice {
 
   final _interop = CoastAudioInterop();
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final CaContext context;
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final AudioDeviceType type;
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final int bufferFrameSize;
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final AudioFormat format;
 
   final AudioDeviceId? _initialDeviceId;
@@ -168,7 +168,7 @@ class CaDevice {
         .throwMaResultIfNeeded();
   }
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   AudioDeviceState get state {
     if (_interop.isDisposed) {
       return AudioDeviceState.uninitialized;
@@ -254,7 +254,7 @@ class CaDevice {
     return PlaybackDeviceWriteResult(result, _pFramesWrite.value);
   }
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void dispose() {
     if (_interop.isDisposed) {
       return;

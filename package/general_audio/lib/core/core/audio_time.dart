@@ -50,6 +50,7 @@ class AudioTime {
   AudioTime.fromDuration(Duration duration)
       : seconds = duration.inMicroseconds / Duration.microsecondsPerSecond;
 
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static AudioTime zero = const AudioTime(0);
 
   /// Time in seconds.
@@ -85,34 +86,42 @@ class AudioTime {
         microseconds: (seconds * Duration.microsecondsPerSecond).toInt());
   }
 
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   AudioTime operator +(AudioTime other) {
     return AudioTime(seconds + other.seconds);
   }
 
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   AudioTime operator -(AudioTime other) {
     return AudioTime(seconds - other.seconds);
   }
 
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   AudioTime operator /(AudioTime other) {
     return AudioTime(seconds / other.seconds);
   }
 
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   AudioTime operator *(AudioTime other) {
     return AudioTime(seconds * other.seconds);
   }
 
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   bool operator >(AudioTime other) {
     return seconds > other.seconds;
   }
 
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   bool operator <(AudioTime other) {
     return seconds < other.seconds;
   }
 
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   bool operator >=(AudioTime other) {
     return seconds >= other.seconds;
   }
 
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   bool operator <=(AudioTime other) {
     return seconds <= other.seconds;
   }

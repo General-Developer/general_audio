@@ -35,14 +35,14 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 /// NOTE: This class is not fully implemented for now and is only used for internal purposes.
 /// An audio resampler for converting audio data from one sample rate to another.
 abstract class AudioSampleRateConverterConfig {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   const AudioSampleRateConverterConfig();
 }
 
 /// A linear audio resampler.
 class LinearAudioSampleRateConverterConfig
     extends AudioSampleRateConverterConfig {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   const LinearAudioSampleRateConverterConfig({this.lpfOrder = 1});
 
   /// The order of the low-pass filter used by the resampler.

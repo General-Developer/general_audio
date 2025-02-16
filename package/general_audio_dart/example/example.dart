@@ -33,9 +33,10 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 <!-- END LICENSE --> */
 import 'package:general_audio_dart/general_audio_dart.dart';
- 
+
 void main(List<String> args) async {
   GeneralAudioDart generalAudioDart = GeneralAudioDart();
   await generalAudioDart.ensureInitialized();
-  generalAudioDart.createRecordOrGetRecord(outputRecordFilePath: "./output.wav");
+  generalAudioDart.createRecordOrGetRecord(
+      outputRecordFilePath: "./output.wav");
 }

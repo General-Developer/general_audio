@@ -61,6 +61,7 @@ enum AudioDeviceBackend {
   dummy(ma_backend.ma_backend_null);
 
   const AudioDeviceBackend(this.maValue);
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final int maValue;
 }

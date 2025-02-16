@@ -34,19 +34,22 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 <!-- END LICENSE --> */
 /// Represents a version of the general_audio library.
 class CaVersion {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   const CaVersion(this.major, this.minor, this.revision);
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final int major;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final int minor;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final int revision;
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const supportedVersion = CaVersion(1, 0, 0);
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   bool isSupported(CaVersion current) {
     final isSameMajor = current.major == supportedVersion.major;
     final isLowerMinor = current.minor < supportedVersion.minor;

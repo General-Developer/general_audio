@@ -39,12 +39,12 @@ import 'package:general_audio/core/general_audio.dart';
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 class PlaybackNode extends AudioNode
     with SingleInNodeMixin, SingleOutNodeMixin {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   PlaybackNode({
     required this.device,
   });
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final PlaybackDevice device;
 
   @override

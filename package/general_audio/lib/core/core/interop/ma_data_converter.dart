@@ -41,7 +41,7 @@ import 'package:general_audio/core/core/interop/ma_resampler_config.dart';
 
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 class MaDataConverter {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   MaDataConverter({
     required this.inputFormat,
     required this.outputFormat,
@@ -78,20 +78,21 @@ class MaDataConverter {
   late final _pFramesOut =
       _interop.allocateManaged<UnsignedLongLong>(sizeOf<UnsignedLongLong>());
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final AudioFormat inputFormat;
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final AudioFormat outputFormat;
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int get inputLatencyFrameCount =>
       _interop.bindings.ma_data_converter_get_input_latency(_pConverter);
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int get outputLatencyFrameCount =>
       _interop.bindings.ma_data_converter_get_output_latency(_pConverter);
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int getRequiredInputFrameCount({required int outputFrameCount}) {
     _pFramesIn.value = 0;
     _interop.bindings
@@ -101,7 +102,7 @@ class MaDataConverter {
     return _pFramesIn.value;
   }
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int getExpectedOutputFrameCount({required int inputFrameCount}) {
     _pFramesOut.value = 0;
     _interop.bindings
@@ -111,14 +112,14 @@ class MaDataConverter {
     return _pFramesOut.value;
   }
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void reset() {
     _interop.bindings
         .ma_data_converter_reset(_pConverter)
         .throwMaResultIfNeeded();
   }
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   AudioFormatConverterResult process(
       AudioBuffer bufferIn, AudioBuffer bufferOut) {
     _pFramesIn.value = bufferIn.sizeInFrames;
@@ -139,7 +140,7 @@ class MaDataConverter {
     );
   }
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void dispose() {
     _interop.bindings.ma_data_converter_uninit(_pConverter, nullptr);
     _interop.dispose();

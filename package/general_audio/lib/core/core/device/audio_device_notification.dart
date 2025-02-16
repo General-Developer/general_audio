@@ -42,13 +42,13 @@ import '../interop/internal/generated/bindings.dart';
 ///
 /// You can listen to these notifications by using `AudioDevice.notification.listen`.
 class AudioDeviceNotification {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   const AudioDeviceNotification({
     required this.type,
     required this.state,
   });
 
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   factory AudioDeviceNotification.fromPointer(
       Pointer<ca_device_notification> pNotification) {
     final notification = pNotification.ref;
@@ -89,6 +89,7 @@ enum AudioDeviceNotificationType {
       .ma_device_notification_type_interruption_ended);
 
   const AudioDeviceNotificationType(this.maValue);
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final int maValue;
 }
