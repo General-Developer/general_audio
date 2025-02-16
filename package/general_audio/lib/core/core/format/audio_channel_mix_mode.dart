@@ -34,10 +34,14 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 <!-- END LICENSE --> */
 import '../interop/internal/generated/bindings.dart';
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 enum AudioChannelMixMode {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   simple(ma_channel_mix_mode.ma_channel_mix_mode_simple),
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   rectangular(ma_channel_mix_mode.ma_channel_mix_mode_rectangular);
 
   const AudioChannelMixMode(this.maValue);
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final int maValue;
 }

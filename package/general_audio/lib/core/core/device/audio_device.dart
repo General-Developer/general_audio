@@ -39,6 +39,7 @@ import 'package:general_audio/core/core/interop/ca_log.dart';
 
 /// The audio device context that is used to create audio devices for the specified backends.
 class AudioDeviceContext with AudioResourceMixin {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   AudioDeviceContext({required List<AudioDeviceBackend> backends}) {
     _context = CaContext(backends: backends, pLog: _log.ref);
 
@@ -201,6 +202,7 @@ class PlaybackDevice extends AudioDevice {
 
 /// The result of the write operation.
 class PlaybackDeviceWriteResult {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   const PlaybackDeviceWriteResult(this.maResult, this.framesWrite);
 
   /// The miniaudio result of the write operation.
@@ -226,6 +228,7 @@ class CaptureDevice extends AudioDevice {
 
 /// The result of the read operation.
 class CaptureDeviceReadResult {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   const CaptureDeviceReadResult(this.maResult, this.framesRead);
 
   /// The miniaudio result of the read operation.

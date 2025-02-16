@@ -35,7 +35,9 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 import 'package:general_audio/core/general_audio.dart';
 import 'package:general_audio/core/core/interop/internal/generated/bindings.dart';
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 extension AudioSampleRateConverterExtension on AudioSampleRateConverterConfig {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ma_resampler_config get maConfig {
     final bindings = CoastAudioInterop().bindings;
     final self = this;

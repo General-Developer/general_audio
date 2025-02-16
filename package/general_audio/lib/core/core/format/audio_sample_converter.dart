@@ -36,6 +36,7 @@ import 'dart:typed_data';
 
 /// A converter to convert audio samples from one format to another.
 abstract class AudioSampleConverter {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   const AudioSampleConverter({
     required this.inputBytes,
     required this.outputBytes,
@@ -67,6 +68,7 @@ abstract class AudioSampleConverter {
 ///
 /// The result will be multiplied by 256.
 class AudioSampleConverterInt24ToInt32 extends AudioSampleConverter {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   const AudioSampleConverterInt24ToInt32()
       : super(inputBytes: 3, outputBytes: 4);
 

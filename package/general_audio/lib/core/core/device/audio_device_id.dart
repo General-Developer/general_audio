@@ -39,8 +39,10 @@ import 'package:general_audio/core/core/interop/internal/generated/bindings.dart
 
 /// A unique identifier for an audio device.
 class AudioDeviceId {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   const AudioDeviceId(this.data);
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   AudioDeviceId.fromPointer(Pointer<ma_device_id> pId, int size)
       : data = Uint8List(size) {
     final pRawData = pId.cast<Uint8>();

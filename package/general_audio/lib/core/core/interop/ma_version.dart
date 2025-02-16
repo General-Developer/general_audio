@@ -34,13 +34,19 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 <!-- END LICENSE --> */
 /// Represents a version of the miniaudio library.
 class MaVersion {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   const MaVersion(this.major, this.minor, this.revision);
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final int major;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final int minor;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final int revision;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const supportedVersion = MaVersion(0, 11, 21);
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   bool isSupported(MaVersion current) {
     final isSameMajor = current.major == supportedVersion.major;
     final isLowerMinor = current.minor < supportedVersion.minor;

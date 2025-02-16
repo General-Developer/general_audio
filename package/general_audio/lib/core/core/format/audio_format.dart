@@ -34,7 +34,9 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 <!-- END LICENSE --> */
 import 'package:general_audio/core/core/format/sample_format.dart';
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 class AudioFormat {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   const AudioFormat({
     required this.sampleRate,
     required this.channels,
@@ -81,9 +83,12 @@ class AudioFormat {
   }
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 class AudioFormatError extends Error {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   AudioFormatError.unsupportedSampleFormat(SampleFormat format)
       : message = '${format.name} is not supported.';
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final String message;
 
   @override

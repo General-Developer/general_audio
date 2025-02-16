@@ -38,14 +38,18 @@ import 'package:general_audio/core/general_audio.dart';
 import 'package:general_audio/core/core/codec/wav/wav_chunk.dart';
 import 'package:general_audio/core/core/ffi_extension.dart';
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 class WavAudioEncoder extends AudioEncoder {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   WavAudioEncoder({
     required this.dataSource,
     required this.inputFormat,
     Memory? memory,
   }) : memory = memory ?? Memory();
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final AudioOutputDataSource dataSource;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final Memory memory;
 
   var _isStarted = false;

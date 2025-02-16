@@ -43,5 +43,6 @@ enum AudioDeviceType {
   capture(ma_device_type.ma_device_type_capture);
 
   const AudioDeviceType(this.maValue);
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final int maValue;
 }

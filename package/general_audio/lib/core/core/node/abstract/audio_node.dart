@@ -39,6 +39,7 @@ import 'package:general_audio/core/general_audio.dart';
 /// An audio node is a node that can be connected to other audio nodes to create a audio node graph.
 /// You can create a custom audio node by extending [AudioNode] and subclasses like [AudioFilterNode].
 abstract class AudioNode {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   const AudioNode();
 
   /// The list of input buses.
@@ -64,5 +65,6 @@ abstract class AudioFilterNode extends AudioNode
         SingleOutNodeMixin,
         ProcessorNodeMixin,
         BypassNodeMixin {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   AudioFilterNode();
 }

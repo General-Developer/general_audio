@@ -36,24 +36,30 @@ import 'package:general_audio/core/general_audio.dart';
 
 import 'generated/bindings.dart';
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 extension IntExtension on int {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void throwMaResultIfNeeded() {
     asMaResult().throwIfNeeded();
   }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   MaResult asMaResult() {
     return MaResult.values.firstWhere((r) => r.code == this);
   }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   bool asMaBool() {
     return this == 1;
   }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   SampleFormat asSampleFormat() {
     return SampleFormat.values.firstWhere((r) => r.maFormat == this,
         orElse: () => throw Exception('Unsupported ma_format: $this'));
   }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   T whenSeekOrigin<T>({
     required T Function() current,
     required T Function() start,
@@ -72,13 +78,17 @@ extension IntExtension on int {
   }
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 extension BoolExtension on bool {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int toMaBool() {
     return this ? 1 : 0;
   }
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 extension SampleFormatExtension on SampleFormat {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int get maFormat {
     switch (this) {
       case SampleFormat.uint8:

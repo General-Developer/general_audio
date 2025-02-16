@@ -36,11 +36,14 @@ import 'dart:ffi' as ffi;
 
 import 'package:general_audio/core/core/ffi_extension.dart';
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class WavChunk extends ffi.Struct {
   @ffi.Array.multi([4])
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Array<ffi.Char> id;
 
   @ffi.Int32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int size;
 
   @override
@@ -49,8 +52,10 @@ final class WavChunk extends ffi.Struct {
   }
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class WavRiffData extends ffi.Struct {
   @ffi.Array.multi([4])
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Array<ffi.Char> format;
 
   @override
@@ -59,23 +64,30 @@ final class WavRiffData extends ffi.Struct {
   }
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class WavFmtData extends ffi.Struct {
   @ffi.Int16()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int encodingFormat;
 
   @ffi.Int16()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int channels;
 
   @ffi.Int32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int sampleRate;
 
   @ffi.Int32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int bytesPerSecond;
 
   @ffi.Int16()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int bytesPerFrame;
 
   @ffi.Int16()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int bitsPerSample;
 
   @override

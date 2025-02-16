@@ -59,6 +59,7 @@ abstract class AudioDecoder {
 
 /// The result of [AudioDecoder.decode].
 class AudioDecodeResult {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   const AudioDecodeResult({
     required this.frameCount,
     required this.isEnd,

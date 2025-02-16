@@ -39,9 +39,11 @@ import 'package:meta/meta.dart';
 ///
 /// [frameCount] is the number of frames encoded.
 class AudioEncodeResult {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   const AudioEncodeResult({
     required this.frameCount,
   });
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final int frameCount;
 }
 

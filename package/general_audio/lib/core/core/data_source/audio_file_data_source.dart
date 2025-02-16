@@ -76,6 +76,7 @@ class AudioFileDataSource
     });
   }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final RandomAccessFile file;
   int? _cachedLength;
   int? _cachedPosition;
@@ -132,6 +133,7 @@ class AudioFileDataSource
     return buffer.length;
   }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void closeSync() {
     AudioResourceManager.dispose(resourceId);
   }

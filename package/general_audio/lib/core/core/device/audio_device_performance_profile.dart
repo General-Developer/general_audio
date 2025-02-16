@@ -47,5 +47,6 @@ enum AudioDevicePerformanceProfile {
   conservative(ma_performance_profile.ma_performance_profile_conservative);
 
   const AudioDevicePerformanceProfile(this.maValue);
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final int maValue;
 }

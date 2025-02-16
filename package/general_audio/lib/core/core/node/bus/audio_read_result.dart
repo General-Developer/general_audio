@@ -34,6 +34,7 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 <!-- END LICENSE --> */
 /// The result of reading audio data from a source.
 class AudioReadResult {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   const AudioReadResult({
     required this.frameCount,
     required this.isEnd,

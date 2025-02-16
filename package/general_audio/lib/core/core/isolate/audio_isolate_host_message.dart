@@ -34,10 +34,12 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 <!-- END LICENSE --> */
 import 'package:general_audio/core/core/isolate/audio_isolate.dart';
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 sealed class AudioIsolateHostMessage {
   const AudioIsolateHostMessage();
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 class AudioIsolateHostRequest<TPayload> extends AudioIsolateHostMessage {
   static var _id = 0;
 
@@ -45,20 +47,29 @@ class AudioIsolateHostRequest<TPayload> extends AudioIsolateHostMessage {
     return _id++;
   }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   AudioIsolateHostRequest(this.payload) : id = _getId();
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final int id;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final TPayload payload;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 class AudioIsolateRunRequest<TInitialMessage> extends AudioIsolateHostMessage {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   const AudioIsolateRunRequest({
     required this.initialMessage,
     required this.worker,
   });
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final TInitialMessage? initialMessage;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final AudioIsolateWorker<TInitialMessage> worker;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 class AudioIsolateShutdownRequest extends AudioIsolateHostMessage {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   const AudioIsolateShutdownRequest();
 }
