@@ -32,7 +32,7 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 
 <!-- END LICENSE --> */
-library general_audio;
+library;
 
 export 'core/audio_clock.dart';
 export 'core/audio_resource.dart';

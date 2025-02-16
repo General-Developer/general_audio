@@ -34,7 +34,9 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 <!-- END LICENSE --> */
 import 'package:general_audio/dart/general_audio/core/general_audio_recorder/base.dart';
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 class GeneralAudioRecorder extends GeneralAudioRecorderBase {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   GeneralAudioRecorder({
     required super.generalAudioRecorderMessage,
     required super.uniqueId,

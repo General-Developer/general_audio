@@ -38,6 +38,7 @@ import 'package:general_audio/core/general_audio.dart';
 
 /// A node that mixes audio data from multiple input buses.
 class MixerNode extends AudioNode with SingleOutNodeMixin {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   MixerNode({
     required this.format,
     this.isClampEnabled = true,
@@ -196,16 +197,21 @@ class MixerNode extends AudioNode with SingleOutNodeMixin {
   }
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 class MixerNodeException implements Exception {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   const MixerNodeException.connectedInputBus()
       : message = 'input bus is connected to another bus',
         code = -1;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   const MixerNodeException.invalidBus()
       : message = 'the bus is not associated to this node',
         code = -2;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final String message;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final int code;
 
   @override

@@ -41,6 +41,7 @@ import 'package:ffi/ffi.dart';
 /// You can customize the behavior by extending this class and provide it to memory related instances such as [AllocatedAudioFrames].
 /// By default, [FfiMemory] will be used.
 abstract class Memory {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   factory Memory() {
     return FfiMemory();
   }
@@ -61,6 +62,7 @@ abstract class Memory {
 /// [FfiMemory] uses native functions to interact with memory operations.
 /// For example, [setMemory] will use the `memset` function.
 class FfiMemory implements Memory {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   factory FfiMemory() {
     return _instance;
   }

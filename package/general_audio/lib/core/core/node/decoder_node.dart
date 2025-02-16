@@ -34,10 +34,12 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 <!-- END LICENSE --> */
 import 'package:general_audio/core/general_audio.dart';
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef DecodeResultListener = void Function(AudioDecodeResult result);
 
 /// An audio node that decodes audio data by using [AudioDecoder].
 class DecoderNode extends DataSourceNode {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   DecoderNode({required this.decoder});
 
   /// The decoder that decodes audio data.

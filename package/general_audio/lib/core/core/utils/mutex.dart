@@ -34,6 +34,7 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 <!-- END LICENSE --> */
 /// Mutex provides a simple mutual exclusion lock.
 class Mutex {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   Mutex();
 
   var _isLocked = false;
@@ -57,7 +58,9 @@ class Mutex {
   }
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 class MutexAlreadyLockedException implements Exception {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   const MutexAlreadyLockedException();
 
   @override

@@ -39,6 +39,7 @@ import 'package:general_audio/core/general_audio.dart';
 /// The abstract class of a wave generator function.
 /// You can implement custom waves by extending this class.
 abstract class WaveFunction {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   const WaveFunction();
 
   /// Compute 1Hz wave data at the [time].
@@ -47,7 +48,9 @@ abstract class WaveFunction {
 
 /// A wave generator function that returns a constant value.
 class OffsetFunction extends WaveFunction {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   OffsetFunction(this.offset);
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   double offset;
 
   @override
@@ -58,6 +61,7 @@ class OffsetFunction extends WaveFunction {
 
 /// A wave generator function that returns a sine wave.
 class SineFunction extends WaveFunction {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   const SineFunction();
 
   @override
@@ -68,6 +72,7 @@ class SineFunction extends WaveFunction {
 
 /// A wave generator function that returns a square wave.
 class SquareFunction extends WaveFunction {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   const SquareFunction();
 
   @override
@@ -83,6 +88,7 @@ class SquareFunction extends WaveFunction {
 
 /// A wave generator function that returns a triangle wave.
 class TriangleFunction extends WaveFunction {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   const TriangleFunction();
 
   @override
@@ -94,6 +100,7 @@ class TriangleFunction extends WaveFunction {
 
 /// A wave generator function that returns a sawtooth wave.
 class SawtoothFunction extends WaveFunction {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   const SawtoothFunction();
 
   @override

@@ -38,7 +38,9 @@ import 'package:general_audio/core/general_audio.dart';
 import 'package:general_audio/core/core/interop/internal/generated/bindings.dart';
 import 'package:general_audio/core/core/interop/internal/ma_extension.dart';
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 class MaDecoder {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   MaDecoder({
     required this.dataSource,
     SampleFormat? sampleFormat,
@@ -76,6 +78,7 @@ class MaDecoder {
     _interop.onInitialized();
   }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final AudioInputDataSource dataSource;
 
   final _interop = CoastAudioInterop();
@@ -87,6 +90,7 @@ class MaDecoder {
   late final _pFrames =
       _interop.allocateManaged<UnsignedLongLong>(sizeOf<UnsignedLongLong>());
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int get cursorInFrames {
     _interop.bindings
         .ma_decoder_get_cursor_in_pcm_frames(_pDecoder, _pFrames)
@@ -100,6 +104,7 @@ class MaDecoder {
         .throwMaResultIfNeeded();
   }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int get lengthInFrames {
     _interop.bindings
         .ma_decoder_get_length_in_pcm_frames(_pDecoder, _pFrames)
@@ -107,6 +112,7 @@ class MaDecoder {
     return _pFrames.value;
   }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int get availableFrames {
     _interop.bindings
         .ma_decoder_get_available_frames(_pDecoder, _pFrames)
@@ -114,10 +120,13 @@ class MaDecoder {
     return _pFrames.value;
   }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   late final AudioFormat originalFormat;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   late final AudioFormat outputFormat;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   AudioDecodeResult decode(AudioBuffer destination) {
     final result = _interop.bindings
         .ma_decoder_read_pcm_frames(_pDecoder, destination.pBuffer.cast(),
@@ -133,6 +142,7 @@ class MaDecoder {
     );
   }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void dispose() {
     _MaDecoderCallback.unregister(_pDecoder.ref.pUserData);
     _interop.bindings.ma_decoder_uninit(_pDecoder).throwMaResultIfNeeded();

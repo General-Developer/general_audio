@@ -34,14 +34,18 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 <!-- END LICENSE --> */
 import 'package:general_audio/core/general_audio.dart';
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 class CaptureNode extends AudioNode with SingleOutNodeMixin {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   CaptureNode({
     required this.device,
     this.autoStart = true,
   });
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final CaptureDevice device;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   bool autoStart;
 
   @override

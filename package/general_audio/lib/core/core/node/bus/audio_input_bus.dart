@@ -44,6 +44,7 @@ typedef AttemptConnectBusCallback = void Function(AudioOutputBus bus);
 
 /// [AudioInputBus] represents a audio node's input format and connection.
 class AudioInputBus extends AudioBus {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   AudioInputBus({
     required super.node,
     required InputFormatResolver formatResolver,
@@ -78,12 +79,15 @@ class AudioInputBus extends AudioBus {
   AudioOutputBus? get connectedBus => _connectedBus;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 extension InternalAudioInputBusExtension on AudioInputBus {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void tryConnect(AudioOutputBus bus) {
     _attemptConnectBus?.call(bus);
     _connectedBus = bus;
   }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void onDisconnect() {
     _connectedBus = null;
   }

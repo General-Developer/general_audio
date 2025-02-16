@@ -39,25 +39,31 @@ import 'dart:isolate';
 import 'package:general_audio/core/core/isolate/audio_isolate_host_message.dart';
 import 'package:general_audio/core/core/isolate/audio_isolate_worker_message.dart';
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 class AudioIsolateHostMessenger {
   final _receivePort = ReceivePort();
   SendPort? _sendPort;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   SendPort get workerToHostSendPort => _receivePort.sendPort;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   late final message = _receivePort
       .where((r) => r is AudioIsolateWorkerMessage)
       .cast<AudioIsolateWorkerMessage>()
       .asBroadcastStream();
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void attach(SendPort sendPort) {
     _sendPort = sendPort;
   }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void detach() {
     _sendPort = null;
   }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   Future<TResponse?> request<TRequest, TResponse>(TRequest payload) async {
     final sendPort = _sendPort;
     if (sendPort == null) {
@@ -89,6 +95,7 @@ class AudioIsolateHostMessenger {
     }
   }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void requestShutdown() {
     final sendPort = _sendPort;
     if (sendPort == null) {
@@ -98,13 +105,16 @@ class AudioIsolateHostMessenger {
     sendPort.send(const AudioIsolateShutdownRequest());
   }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void close() {
     detach();
     _receivePort.close();
   }
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 class AudioIsolateWorkerMessenger {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   AudioIsolateWorkerMessenger();
   final _receivePort = ReceivePort();
   SendPort? _sendPort;
@@ -113,8 +123,10 @@ class AudioIsolateWorkerMessenger {
 
   StreamSubscription<AudioIsolateHostRequest>? _requestSubscription;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   SendPort get hostToWorkerSendPort => _receivePort.sendPort;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   late final message = _receivePort
       .where((r) => r is AudioIsolateHostMessage)
       .cast<AudioIsolateHostMessage>()
@@ -125,22 +137,27 @@ class AudioIsolateWorkerMessenger {
       .cast<AudioIsolateHostRequest>()
       .asBroadcastStream();
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void attach(SendPort sendPort) {
     _sendPort = sendPort;
   }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void detach() {
     _sendPort = null;
   }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void onShutdownRequested(AudioIsolateShutdownRequest request) {
     _shutdownCompleter.complete(AudioIsolateShutdownReason.hostRequested);
   }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void onWorkerFinished() {
     _shutdownCompleter.complete(AudioIsolateShutdownReason.workerFinished);
   }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void listenRequest<TRequestPayload>(
       FutureOr<dynamic> Function(TRequestPayload) onRequest) {
     final sendPort = _sendPort;
@@ -163,6 +180,7 @@ class AudioIsolateWorkerMessenger {
     });
   }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   Future<void> listenShutdown(
       {FutureOr<void> Function(AudioIsolateShutdownReason reason, Object? e,
               StackTrace? stackTrace)?
@@ -178,6 +196,7 @@ class AudioIsolateWorkerMessenger {
     }
   }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void close() {
     detach();
     _receivePort.close();

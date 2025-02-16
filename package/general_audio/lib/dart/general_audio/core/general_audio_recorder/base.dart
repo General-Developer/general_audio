@@ -34,12 +34,19 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 <!-- END LICENSE --> */
 // ignore_for_file: empty_catches
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 class GeneralAudioRecorderMessage {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   dynamic audioDeviceBackend;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   dynamic audioDeviceId;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   String saveToFilePath;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int? sampleRate;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int? channels;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   GeneralAudioRecorderMessage({
     required this.audioDeviceBackend,
     required this.audioDeviceId,
@@ -49,18 +56,27 @@ class GeneralAudioRecorderMessage {
   });
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 abstract class GeneralAudioRecorderBaseCore {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   bool get isRecord;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   Future<void> start();
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   Future<void> stop();
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 abstract class GeneralAudioRecorderBase
     implements GeneralAudioRecorderBaseCore {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final String uniqueId;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   GeneralAudioRecorderMessage generalAudioRecorderMessage;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void Function() onStop;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   GeneralAudioRecorderBase({
     required this.generalAudioRecorderMessage,
     required this.uniqueId,

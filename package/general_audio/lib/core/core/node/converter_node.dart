@@ -39,6 +39,7 @@ import 'package:general_audio/core/general_audio.dart';
 /// [ConverterNode] is a node that converts the audio data to the specified format.
 class ConverterNode extends AudioNode
     with SingleInNodeMixin, SingleOutNodeMixin {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   ConverterNode({
     required this.outputFormat,
     this.bufferFrameCount = 1024,
