@@ -1,13 +1,13 @@
 name: 'general_audio_flutter'
-description: 'general_audio is program for help you, booster up your projects significants'
+description: 'General Audio is library for recording, playing anything sound from any device and support backend without flutter ui because this library is bindings ffi miniaudio'
 version: '0.0.2'
 funding:
   - 'https://github.com/sponsors/azkadev'
   - 'https://github.com/sponsors/generalfoss'
-homepage: 'https://youtube.com/@azkadev'
-repository: 'https://github.com/azkadev/general_framework'
-issue_tracker: 'https://t.me/DEVELOPER_GLOBAL_PUBLIC'
-documentation: 'https://youtube.com/@azkadev'
+homepage: 'https://github.com/{main_username_owner}/general_audio'
+repository: 'https://github.com/{main_username_owner}/general_audio'
+issue_tracker: 'https://github.com/{main_username_owner}/general_audio/issues'
+documentation: 'https://github.com/{main_username_owner}/general_audio/tree/main/docs'
 false_secrets:
   - 'android/jniLibs'
   - 'linux/'

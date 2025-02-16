@@ -55,7 +55,7 @@ Future<void> pubspecUpdate({
 
     yaml_code_clone.addAll({
       "description":
-          "general_audio is program for help you, booster up your projects significants",
+          "General Audio is library for recording, playing anything sound from any device and support backend without flutter ui because this library is bindings ffi miniaudio",
       "version": version_package,
       "repository":
           "https://github.com/{main_username_owner}/general_audio",
