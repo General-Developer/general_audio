@@ -40,6 +40,7 @@ import 'package:general_audio/dart/general_audio/core/general_audio_recorder/gen
 import 'package:general_lib/general_lib.dart';
 import 'package:io_universe/io_universe.dart';
 
+///
 class GeneralAudio extends GeneralAudioBase {
   GeneralAudio({
     super.sharedLibraryPath,

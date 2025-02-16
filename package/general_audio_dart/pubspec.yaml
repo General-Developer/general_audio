@@ -20,7 +20,7 @@ platforms:
 environment:
   sdk: '>=3.6.0 <4.0.0'
 dependencies:
-  path: '^1.9.0'
+  path: '^1.9.1'
   general_audio: '^0.0.2'
 dev_dependencies:
   lints: '^5.0.0'
@@ -30,3 +30,5 @@ executables:
 dependency_overrides:
   pointycastle: '3.8.0'
   mime: '^2.0.0'
+project:
+  type: ''
