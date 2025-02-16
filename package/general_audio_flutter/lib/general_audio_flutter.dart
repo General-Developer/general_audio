@@ -32,4 +32,14 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 
 <!-- END LICENSE --> */
-library general_audio_flutter;
+library;
+
+import 'package:flutter/material.dart';
+
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+class GeneralAudioFlutter {
+  /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
+  static void ensureInitialized() {
+    WidgetsFlutterBinding.ensureInitialized();
+  }
+}

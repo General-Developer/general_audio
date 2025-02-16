@@ -32,15 +32,10 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 
 <!-- END LICENSE --> */
-
-export "package:general_audio/general_audio.dart";
-
-import "package:general_audio/general_audio.dart";
-
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-class GeneralAudioDart extends GeneralAudio {
-/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
-  GeneralAudioDart({
-    super.sharedLibraryPath
-  });
+import 'package:general_audio_dart/general_audio_dart.dart';
+ 
+void main(List<String> args) async {
+  GeneralAudioDart generalAudioDart = GeneralAudioDart();
+  await generalAudioDart.ensureInitialized();
+  generalAudioDart.createRecordOrGetRecord(outputRecordFilePath: "./output.wav");
 }

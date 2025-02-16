@@ -1,5 +1,3 @@
-// ignore_for_file: non_constant_identifier_names
-
 /* <!-- START LICENSE -->
 
 
@@ -34,6 +32,8 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 
 
 <!-- END LICENSE --> */
+ import 'package:general_audio_flutter/general_audio_flutter.dart';
 
-void main(List<String> args_raw) async {}
-
+void main(List<String> args) async {
+  GeneralAudioFlutter.ensureInitialized();
+}
