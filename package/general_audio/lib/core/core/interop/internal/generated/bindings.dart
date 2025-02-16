@@ -19533,1090 +19533,1563 @@ final class UnnamedUnion19 extends ffi.Union {
 /// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external UnnamedStruct57 as_external_typed_data;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external UnnamedStruct58 as_native_pointer;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class UnnamedStruct53 extends ffi.Struct {
   @Dart_Port()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int id;
 
   @Dart_Port()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int origin_id;
 }
 
 /// A port is used to send or receive inter-isolate messages
 typedef Dart_Port = ffi.Int64;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef DartDart_Port = int;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class UnnamedStruct54 extends ffi.Struct {
   @ffi.Int64()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int id;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class UnnamedStruct55 extends ffi.Struct {
   @ffi.IntPtr()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int length;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ffi.Pointer<_Dart_CObject>> values;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class UnnamedStruct56 extends ffi.Struct {
   @ffi.Int32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int type;
 
   @ffi.IntPtr()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int length;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ffi.Uint8> values;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 abstract class Dart_TypedData_Type {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int Dart_TypedData_kByteData = 0;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int Dart_TypedData_kInt8 = 1;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int Dart_TypedData_kUint8 = 2;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int Dart_TypedData_kUint8Clamped = 3;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int Dart_TypedData_kInt16 = 4;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int Dart_TypedData_kUint16 = 5;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int Dart_TypedData_kInt32 = 6;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int Dart_TypedData_kUint32 = 7;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int Dart_TypedData_kInt64 = 8;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int Dart_TypedData_kUint64 = 9;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int Dart_TypedData_kFloat32 = 10;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int Dart_TypedData_kFloat64 = 11;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int Dart_TypedData_kInt32x4 = 12;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int Dart_TypedData_kFloat32x4 = 13;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int Dart_TypedData_kFloat64x2 = 14;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int Dart_TypedData_kInvalid = 15;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class UnnamedStruct57 extends ffi.Struct {
   @ffi.Int32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int type;
 
   @ffi.IntPtr()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int length;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ffi.Uint8> data;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ffi.Void> peer;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external Dart_HandleFinalizer callback;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart_HandleFinalizer = ffi.Pointer<ffi.NativeFunction<Dart_HandleFinalizerFunction>>;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dart_HandleFinalizerFunction = ffi.Void Function(ffi.Pointer<ffi.Void> isolate_callback_data, ffi.Pointer<ffi.Void> peer);
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef DartDart_HandleFinalizerFunction = void Function(ffi.Pointer<ffi.Void> isolate_callback_data, ffi.Pointer<ffi.Void> peer);
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class UnnamedStruct58 extends ffi.Struct {
   @ffi.IntPtr()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int ptr;
 
   @ffi.IntPtr()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int size;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external Dart_HandleFinalizer callback;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ca_context extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ffi.Void> pRef;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ca_device_notification extends ffi.Struct {
   @ffi.Int32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int type;
 
   @ffi.Int32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int state;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ca_device_config extends ffi.Struct {
   @ffi.Int32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int type;
 
   @ffi.Int32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int format;
 
   @ffi.Int()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int sampleRate;
 
   @ffi.Int()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int channels;
 
   @ffi.Int()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int bufferFrameSize;
 
   @ma_bool8()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int noFixedSizedCallback;
 
   @ffi.Int64()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int notificationPortId;
 
   @ffi.Int32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int channelMixMode;
 
   @ffi.Int32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int performanceProfile;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_resampler_config resampling;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ca_device extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ca_device_config config;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ca_device_notification> pNotification;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_device device;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_pcm_rb buffer;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ca_log_message extends ffi.Struct {
   @ffi.Int32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int level;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ffi.Char> pMessage;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ca_log extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_mutex lock;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_log log;
 
   @Dart_Port_DL()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int portId;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external Dart_CObject notification;
 
   @ma_bool8()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int hasNotification;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int messageCount;
 
   @ffi.Array.multi([256])
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Array<ca_log_message> messages;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_resource_manager extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_resource_manager_config config;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_resource_manager_data_buffer_node> pRootDataBufferNode;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_mutex dataBufferBSTLock;
 
   @ffi.Array.multi([64])
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Array<ma_thread> jobThreads;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_job_queue jobQueue;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_default_vfs defaultVFS;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_log log;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_resource_manager_config extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_allocation_callbacks allocationCallbacks;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_log> pLog;
 
   @ffi.Int32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int decodedFormat;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int decodedChannels;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int decodedSampleRate;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int jobThreadCount;
 
   @ffi.Size()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int jobThreadStackSize;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int jobQueueCapacity;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int flags;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_vfs> pVFS;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ffi.Pointer<ma_decoding_backend_vtable>> ppCustomDecodingBackendVTables;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int customDecodingBackendCount;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ffi.Void> pCustomDecodingBackendUserData;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_resource_manager_data_buffer_node extends ffi.Struct {
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int hashedName32;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int refCount;
 
   @ffi.Int32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int result;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int executionCounter;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int executionPointer;
 
   @ma_bool32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int isDataOwnedByResourceManager;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_resource_manager_data_supply data;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_resource_manager_data_buffer_node> pParent;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_resource_manager_data_buffer_node> pChildLo;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_resource_manager_data_buffer_node> pChildHi;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_resource_manager_data_supply extends ffi.Struct {
   @ffi.Int32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int type;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external UnnamedUnion20 backend;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 abstract class ma_resource_manager_data_supply_type {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int ma_resource_manager_data_supply_type_unknown = 0;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int ma_resource_manager_data_supply_type_encoded = 1;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int ma_resource_manager_data_supply_type_decoded = 2;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int ma_resource_manager_data_supply_type_decoded_paged = 3;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class UnnamedUnion20 extends ffi.Union {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external UnnamedStruct59 encoded;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external UnnamedStruct60 decoded;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external UnnamedStruct61 decodedPaged;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class UnnamedStruct59 extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ffi.Void> pData;
 
   @ffi.Size()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int sizeInBytes;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class UnnamedStruct60 extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ffi.Void> pData;
 
   @ma_uint64()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int totalFrameCount;
 
   @ma_uint64()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int decodedFrameCount;
 
   @ffi.Int32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int format;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int channels;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int sampleRate;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class UnnamedStruct61 extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_paged_audio_buffer_data data;
 
   @ma_uint64()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int decodedFrameCount;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int sampleRate;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_resource_manager_data_buffer extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_data_source_base ds;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_resource_manager> pResourceManager;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_resource_manager_data_buffer_node> pNode;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int flags;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int executionCounter;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int executionPointer;
 
   @ma_uint64()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int seekTargetInPCMFrames;
 
   @ma_bool32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int seekToCursorOnNextRead;
 
   @ffi.Int32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int result;
 
   @ma_bool32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int isLooping;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_atomic_bool32 isConnectorInitialized;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external UnnamedUnion21 connector;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class UnnamedUnion21 extends ffi.Union {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_decoder decoder;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_audio_buffer buffer;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_paged_audio_buffer pagedBuffer;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_resource_manager_data_stream extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_data_source_base ds;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_resource_manager> pResourceManager;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int flags;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_decoder decoder;
 
   @ma_bool32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int isDecoderInitialized;
 
   @ma_uint64()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int totalLengthInPCMFrames;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int relativeCursor;
 
   @ma_uint64()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int absoluteCursor;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int currentPageIndex;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int executionCounter;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int executionPointer;
 
   @ma_bool32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int isLooping;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ffi.Void> pPageData;
 
   @ffi.Array.multi([2])
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Array<ma_uint32> pageFrameCount;
 
   @ffi.Int32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int result;
 
   @ma_bool32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int isDecoderAtEnd;
 
   @ffi.Array.multi([2])
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Array<ma_bool32> isPageValid;
 
   @ma_bool32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int seekCounter;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_resource_manager_data_source extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external UnnamedUnion22 backend;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int flags;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int executionCounter;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int executionPointer;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class UnnamedUnion22 extends ffi.Union {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_resource_manager_data_buffer buffer;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_resource_manager_data_stream stream;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 abstract class ma_resource_manager_data_source_flags {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int MA_RESOURCE_MANAGER_DATA_SOURCE_FLAG_STREAM = 1;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int MA_RESOURCE_MANAGER_DATA_SOURCE_FLAG_DECODE = 2;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int MA_RESOURCE_MANAGER_DATA_SOURCE_FLAG_ASYNC = 4;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int MA_RESOURCE_MANAGER_DATA_SOURCE_FLAG_WAIT_INIT = 8;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int MA_RESOURCE_MANAGER_DATA_SOURCE_FLAG_UNKNOWN_LENGTH = 16;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_resource_manager_pipeline_stage_notification extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_async_notification> pNotification;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_fence> pFence;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_resource_manager_pipeline_notifications extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_resource_manager_pipeline_stage_notification init;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_resource_manager_pipeline_stage_notification done;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 abstract class ma_resource_manager_flags {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int MA_RESOURCE_MANAGER_FLAG_NON_BLOCKING = 1;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int MA_RESOURCE_MANAGER_FLAG_NO_THREADING = 2;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_resource_manager_data_source_config extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ffi.Char> pFilePath;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ffi.WChar> pFilePathW;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_resource_manager_pipeline_notifications> pNotifications;
 
   @ma_uint64()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int initialSeekPointInPCMFrames;
 
   @ma_uint64()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int rangeBegInPCMFrames;
 
   @ma_uint64()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int rangeEndInPCMFrames;
 
   @ma_uint64()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int loopPointBegInPCMFrames;
 
   @ma_uint64()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int loopPointEndInPCMFrames;
 
   @ma_bool32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int isLooping;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int flags;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_node_graph extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_node_base base;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_node_base endpoint;
 
   @ma_uint16()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int nodeCacheCapInFrames;
 
   @ma_bool32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int isReading;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_node_base extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_node_graph> pNodeGraph;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_node_vtable> vtable;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ffi.Float> pCachedData;
 
   @ma_uint16()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int cachedDataCapInFramesPerBus;
 
   @ma_uint16()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int cachedFrameCountOut;
 
   @ma_uint16()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int cachedFrameCountIn;
 
   @ma_uint16()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int consumedFrameCountIn;
 
   @ffi.Int32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int state;
 
   @ffi.Array.multi([2])
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Array<ma_uint64> stateTimes;
 
   @ma_uint64()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int localTime;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int inputBusCount;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int outputBusCount;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_node_input_bus> pInputBuses;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_node_output_bus> pOutputBuses;
 
   @ffi.Array.multi([2])
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Array<ma_node_input_bus> inputBuses;
 
   @ffi.Array.multi([2])
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Array<ma_node_output_bus> outputBuses;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ffi.Void> pHeap;
 
   @ma_bool32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int ownsHeap;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_node_vtable extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ffi.NativeFunction<ffi.Void Function(ffi.Pointer<ma_node> pNode, ffi.Pointer<ffi.Pointer<ffi.Float>> ppFramesIn, ffi.Pointer<ma_uint32> pFrameCountIn, ffi.Pointer<ffi.Pointer<ffi.Float>> ppFramesOut, ffi.Pointer<ma_uint32> pFrameCountOut)>> onProcess;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ffi.NativeFunction<ffi.Int32 Function(ffi.Pointer<ma_node> pNode, ma_uint32 outputFrameCount, ffi.Pointer<ma_uint32> pInputFrameCount)>> onGetRequiredInputFrameCount;
 
   @ma_uint8()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int inputBusCount;
 
   @ma_uint8()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int outputBusCount;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int flags;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef ma_node = ffi.Void;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dartma_node = void;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 abstract class ma_node_state {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int ma_node_state_started = 0;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int ma_node_state_stopped = 1;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_node_input_bus extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_node_output_bus head;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int nextCounter;
 
   @ma_spinlock()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int lock;
 
   @ma_uint8()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int channels;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_node_output_bus extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_node> pNode;
 
   @ma_uint8()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int outputBusIndex;
 
   @ma_uint8()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int channels;
 
   @ma_uint8()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int inputNodeInputBusIndex;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int flags;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int refCount;
 
   @ma_bool32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int isAttached;
 
   @ma_spinlock()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int lock;
 
   @ffi.Float()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external double volume;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_node_output_bus> pNext;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_node_output_bus> pPrev;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_node> pInputNode;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 abstract class ma_node_flags {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int MA_NODE_FLAG_PASSTHROUGH = 1;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int MA_NODE_FLAG_CONTINUOUS_PROCESSING = 2;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int MA_NODE_FLAG_ALLOW_NULL_INPUT = 4;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int MA_NODE_FLAG_DIFFERENT_PROCESSING_RATES = 8;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int MA_NODE_FLAG_SILENT_OUTPUT = 16;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_node_config extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_node_vtable> vtable;
 
   @ffi.Int32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int initialState;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int inputBusCount;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int outputBusCount;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_uint32> pInputChannels;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_uint32> pOutputChannels;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_node_graph_config extends ffi.Struct {
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int channels;
 
   @ma_uint16()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int nodeCacheCapInFrames;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_data_source_node_config extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_node_config nodeConfig;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_data_source> pDataSource;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_data_source_node extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_node_base base;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_data_source> pDataSource;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_splitter_node_config extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_node_config nodeConfig;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int channels;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int outputBusCount;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_splitter_node extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_node_base base;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_biquad_node_config extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_node_config nodeConfig;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_biquad_config biquad;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_biquad_node extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_node_base baseNode;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_biquad biquad;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_lpf_node_config extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_node_config nodeConfig;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_lpf_config lpf;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_lpf_node extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_node_base baseNode;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_lpf lpf;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_hpf_node_config extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_node_config nodeConfig;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_hpf_config hpf;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_hpf_node extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_node_base baseNode;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_hpf hpf;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_bpf_node_config extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_node_config nodeConfig;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_bpf_config bpf;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_bpf_node extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_node_base baseNode;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_bpf bpf;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_notch_node_config extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_node_config nodeConfig;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_notch_config notch;
 }
 
 /// Notching Filter
 typedef ma_notch_config = ma_notch2_config;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_notch_node extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_node_base baseNode;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_notch2 notch;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_peak_node_config extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_node_config nodeConfig;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_peak_config peak;
 }
 
 /// Peaking EQ Filter
 typedef ma_peak_config = ma_peak2_config;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_peak_node extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_node_base baseNode;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_peak2 peak;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_loshelf_node_config extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_node_config nodeConfig;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_loshelf_config loshelf;
 }
 
 /// Low Shelf Filter
 typedef ma_loshelf_config = ma_loshelf2_config;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_loshelf_node extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_node_base baseNode;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_loshelf2 loshelf;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_hishelf_node_config extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_node_config nodeConfig;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_hishelf_config hishelf;
 }
 
 /// High Shelf Filter
 typedef ma_hishelf_config = ma_hishelf2_config;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_hishelf_node extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_node_base baseNode;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_hishelf2 hishelf;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_delay_node_config extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_node_config nodeConfig;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_delay_config delay;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_delay_node extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_node_base baseNode;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_delay delay;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_engine extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_node_graph nodeGraph;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_resource_manager> pResourceManager;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_device> pDevice;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_log> pLog;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int sampleRate;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int listenerCount;
 
   @ffi.Array.multi([4])
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Array<ma_spatializer_listener> listeners;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_allocation_callbacks allocationCallbacks;
 
   @ma_bool8()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int ownsResourceManager;
 
   @ma_bool8()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int ownsDevice;
 
   @ma_spinlock()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int inlinedSoundLock;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_sound_inlined> pInlinedSoundHead;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int inlinedSoundCount;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int gainSmoothTimeInFrames;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int defaultVolumeSmoothTimeInPCMFrames;
 
   @ffi.Int32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int monoExpansionMode;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_engine_process_proc onProcess;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ffi.Void> pProcessUserData;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_sound_inlined extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_sound sound;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_sound_inlined> pNext;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_sound_inlined> pPrev;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_sound extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_engine_node engineNode;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_data_source> pDataSource;
 
   @ma_uint64()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int seekTarget;
 
   @ma_bool32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int atEnd;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_sound_end_proc endCallback;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ffi.Void> pEndCallbackUserData;
 
   @ma_bool8()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int ownsDataSource;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_resource_manager_data_source> pResourceManagerDataSource;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_engine_node extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_node_base baseNode;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_engine> pEngine;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int sampleRate;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int volumeSmoothTimeInPCMFrames;
 
   @ffi.Int32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int monoExpansionMode;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_fader fader;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_linear_resampler resampler;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_spatializer spatializer;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_panner panner;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_gainer volumeGainer;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_atomic_float volume;
 
   @ffi.Float()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external double pitch;
 
   @ffi.Float()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external double oldPitch;
 
   @ffi.Float()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external double oldDopplerPitch;
 
   @ma_bool32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int isPitchDisabled;
 
   @ma_bool32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int isSpatializationDisabled;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int pinnedListenerIndex;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external UnnamedStruct62 fadeSettings;
 
   @ma_bool8()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int ownsHeap;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ffi.Void> pHeap;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class UnnamedStruct62 extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_atomic_float volumeBeg;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_atomic_float volumeEnd;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_atomic_uint64 fadeLengthInFrames;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_atomic_uint64 absoluteGlobalTimeInFrames;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef ma_sound_end_proc = ffi.Pointer<ffi.NativeFunction<ma_sound_end_procFunction>>;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef ma_sound_end_procFunction = ffi.Void Function(ffi.Pointer<ffi.Void> pUserData, ffi.Pointer<ma_sound> pSound);
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dartma_sound_end_procFunction = void Function(ffi.Pointer<ffi.Void> pUserData, ffi.Pointer<ma_sound> pSound);
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef ma_engine_process_proc = ffi.Pointer<ffi.NativeFunction<ma_engine_process_procFunction>>;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef ma_engine_process_procFunction = ffi.Void Function(ffi.Pointer<ffi.Void> pUserData, ffi.Pointer<ffi.Float> pFramesOut, ma_uint64 frameCount);
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef Dartma_engine_process_procFunction = void Function(ffi.Pointer<ffi.Void> pUserData, ffi.Pointer<ffi.Float> pFramesOut, Dartma_uint64 frameCount);
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 abstract class ma_sound_flags {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int MA_SOUND_FLAG_STREAM = 1;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int MA_SOUND_FLAG_DECODE = 2;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int MA_SOUND_FLAG_ASYNC = 4;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int MA_SOUND_FLAG_WAIT_INIT = 8;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int MA_SOUND_FLAG_UNKNOWN_LENGTH = 16;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int MA_SOUND_FLAG_NO_DEFAULT_ATTACHMENT = 4096;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int MA_SOUND_FLAG_NO_PITCH = 8192;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int MA_SOUND_FLAG_NO_SPATIALIZATION = 16384;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 abstract class ma_engine_node_type {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int ma_engine_node_type_sound = 0;
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   static const int ma_engine_node_type_group = 1;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_engine_node_config extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_engine> pEngine;
 
   @ffi.Int32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int type;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int channelsIn;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int channelsOut;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int sampleRate;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int volumeSmoothTimeInPCMFrames;
 
   @ffi.Int32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int monoExpansionMode;
 
   @ma_bool8()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int isPitchDisabled;
 
   @ma_bool8()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int isSpatializationDisabled;
 
   @ma_uint8()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int pinnedListenerIndex;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_sound_config extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ffi.Char> pFilePath;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ffi.WChar> pFilePathW;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_data_source> pDataSource;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_node> pInitialAttachment;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int initialAttachmentInputBusIndex;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int channelsIn;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int channelsOut;
 
   @ffi.Int32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int monoExpansionMode;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int flags;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int volumeSmoothTimeInPCMFrames;
 
   @ma_uint64()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int initialSeekPointInPCMFrames;
 
   @ma_uint64()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int rangeBegInPCMFrames;
 
   @ma_uint64()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int rangeEndInPCMFrames;
 
   @ma_uint64()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int loopPointBegInPCMFrames;
 
   @ma_uint64()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int loopPointEndInPCMFrames;
 
   @ma_bool32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int isLooping;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_sound_end_proc endCallback;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ffi.Void> pEndCallbackUserData;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_resource_manager_pipeline_notifications initNotifications;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_fence> pDoneFence;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef ma_sound_group_config = ma_sound_config;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 final class ma_engine_config extends ffi.Struct {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_resource_manager> pResourceManager;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_context> pContext;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_device> pDevice;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_device_id> pPlaybackDeviceID;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_device_data_proc dataCallback;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_device_notification_proc notificationCallback;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_log> pLog;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int listenerCount;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int channels;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int sampleRate;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int periodSizeInFrames;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int periodSizeInMilliseconds;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int gainSmoothTimeInFrames;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int gainSmoothTimeInMilliseconds;
 
   @ma_uint32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int defaultVolumeSmoothTimeInPCMFrames;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_allocation_callbacks allocationCallbacks;
 
   @ma_bool32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int noAutoStart;
 
   @ma_bool32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int noDevice;
 
   @ffi.Int32()
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external int monoExpansionMode;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ma_vfs> pResourceManagerVFS;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ma_engine_process_proc onProcess;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   external ffi.Pointer<ffi.Void> pProcessUserData;
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 typedef ma_sound_group = ma_sound;
