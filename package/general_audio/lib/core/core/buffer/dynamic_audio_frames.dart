@@ -48,6 +48,7 @@ class DynamicAudioFrames extends AudioFrames with AudioResourceMixin {
   })  : _sizeInFrames = initialFrameLength,
         _sizeInBytes = format.bytesPerFrame * initialFrameLength;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final int? maxFrames;
   int _sizeInBytes;
   int _sizeInFrames;

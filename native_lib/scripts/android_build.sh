@@ -1,7 +1,7 @@
 #!/bin/bash
 
 export ANDROID_NDK=$HOME/Android/Sdk/ndk/27.2.12479018
-ANDROID_ABIS="arm64-v8a armeabi-v7a x86 x86_64"
+ANDROID_ABIS="arm64-v8a armeabi-v7a x86_64"
 
 for ANDROID_ABI in $ANDROID_ABIS; do
   mkdir -p build/android

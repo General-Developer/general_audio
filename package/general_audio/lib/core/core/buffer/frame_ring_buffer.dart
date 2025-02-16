@@ -34,7 +34,9 @@ Bukan maksud kami menipu itu karena harga yang sudah di kalkulasi + bantuan tiba
 <!-- END LICENSE --> */
 import 'package:general_audio/core/general_audio.dart';
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 class FrameRingBuffer {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   FrameRingBuffer({
     required this.capacity,
     required this.format,
@@ -46,31 +48,34 @@ class FrameRingBuffer {
 
   late final RingBuffer _ringBuffer;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final AudioFormat format;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   final int capacity;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int get length => _ringBuffer.length ~/ format.bytesPerFrame;
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int write(AudioBuffer buffer) {
     assert(buffer.format.isSameFormat(format));
-    return _ringBuffer.write(buffer.pBuffer.cast(), 0, buffer.sizeInBytes) ~/
-        format.bytesPerFrame;
+    return _ringBuffer.write(buffer.pBuffer.cast(), 0, buffer.sizeInBytes) ~/ format.bytesPerFrame;
   }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int read(AudioBuffer buffer, {bool advance = true}) {
     assert(buffer.format.isSameFormat(format));
-    return _ringBuffer.read(buffer.pBuffer.cast(), 0, buffer.sizeInBytes,
-            advance: advance) ~/
-        format.bytesPerFrame;
+    return _ringBuffer.read(buffer.pBuffer.cast(), 0, buffer.sizeInBytes, advance: advance) ~/ format.bytesPerFrame;
   }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   int copyTo(FrameRingBuffer buffer, {required bool advance}) {
     assert(buffer.format.isSameFormat(format));
-    return _ringBuffer.copyTo(buffer._ringBuffer, advance: advance) ~/
-        format.bytesPerFrame;
+    return _ringBuffer.copyTo(buffer._ringBuffer, advance: advance) ~/ format.bytesPerFrame;
   }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   void clear() {
     _ringBuffer.clear();
   }

@@ -40,6 +40,7 @@ import 'package:general_audio/core/general_audio.dart';
 ///
 /// If you want to fill the buffer with zero, set [fillZero] to `true`.
 class AllocatedAudioFrames extends AudioFrames with AudioResourceMixin {
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
   factory AllocatedAudioFrames({
     required int length,
     required AudioFormat format,

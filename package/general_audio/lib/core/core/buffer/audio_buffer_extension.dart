@@ -38,6 +38,7 @@ import 'dart:typed_data';
 
 import 'package:general_audio/core/general_audio.dart';
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 extension AudioFrameExtension on AudioFrames {
   /// Locks the AudioFrames and returns the internal buffer.
   ///
@@ -51,6 +52,7 @@ extension AudioFrameExtension on AudioFrames {
   }
 }
 
+/// General Library Documentation Undocument By General Corporation & Global Corporation & General Developer
 extension AudioBufferExtension on AudioBuffer {
   /// Fills the buffer with the specified data.
   void fillBytes(int data, {int? frames}) {
