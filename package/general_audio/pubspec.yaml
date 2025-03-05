@@ -23,8 +23,8 @@ dependencies:
   ffi: '^2.1.4'
   build_runner: '^2.4.14'
   meta: '^1.16.0'
-  io_universe: '^0.0.7'
-  general_lib: '^0.0.67'
+  io_universe: '^0.0.8'
+  general_lib: '^0.0.69'
 dev_dependencies:
   lints: '^5.0.0'
   test: 'any'
